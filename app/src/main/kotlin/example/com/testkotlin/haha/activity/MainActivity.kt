@@ -22,7 +22,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 //        println("$TAG----->" + tv_main.text)
 
 
-        button_main.setOnClickListener(this);
+        button_main.setOnClickListener(this)
+//        TestVariableAndAttribute.test1()
     }
 
     fun add(x: Int, y: Int): Int {
@@ -42,7 +43,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
      */
     override fun onClick(v: View) {
         when (v.id) {
-            R.id.button_main -> jump()
+            R.id.button_main -> jumptoBasicGrammar()
         }
     }
 
@@ -57,5 +58,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         toast("已经跳转到TestRecyclerview页面", 0)
     }
 
-
+    fun jumptoBasicGrammar() {
+        val intent = Intent()
+        intent.setClass(MainActivity@this, BasicGrammarActivity::class.java)//获取intent对象
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+        startActivity(intent)// 获取class是使用::反射
+    }
 }
