@@ -9,4 +9,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="haha"/>
+
+    <Button
+        android:id="@+id/button_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_main"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp"
+        android:text="跳转"/>
 </RelativeLayout>

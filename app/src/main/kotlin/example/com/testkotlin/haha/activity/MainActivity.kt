@@ -1,13 +1,17 @@
-package example.com.testkotlin
+package example.com.testkotlin.haha.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.view.View
 import android.widget.Toast
+import example.com.testkotlin.R
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
-    val TAG: String = "MainActivity"
+class MainActivity : AppCompatActivity(), View.OnClickListener {
 
+
+    val TAG: String = "MainActivity"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -16,6 +20,9 @@ class MainActivity : AppCompatActivity() {
 //        toast("我弹出来了", 1)
 //        niceToast("我弹出来了")
 //        println("$TAG----->" + tv_main.text)
+
+
+        button_main.setOnClickListener(this);
     }
 
     fun add(x: Int, y: Int): Int {
@@ -29,4 +36,26 @@ class MainActivity : AppCompatActivity() {
     fun niceToast(message: String, tag: String = TAG, length: Int = Toast.LENGTH_SHORT) {
         Toast.makeText(this, "$TAG---->$message", length).show()
     }
+
+    /**
+     * 点击事件
+     */
+    override fun onClick(v: View) {
+        when (v.id) {
+            R.id.button_main -> jump()
+        }
+    }
+
+    /**
+     *跳转到TestRecyclerview页面
+     */
+    fun jump() {
+        val intent = Intent()
+        intent.setClass(MainActivity@this, TestRecyclerview::class.java)//获取intent对象
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+        startActivity(intent)// 获取class是使用::反射
+        toast("已经跳转到TestRecyclerview页面", 0)
+    }
+
+
 }
