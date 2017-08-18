@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
      */
     override fun onClick(v: View) {
         when (v.id) {
-            R.id.button_main -> jumptoBasicGrammar()
+            R.id.button_main -> jumptoAnkoToXml()
         }
     }
 
@@ -61,6 +61,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     fun jumptoBasicGrammar() {
         val intent = Intent()
         intent.setClass(MainActivity@this, BasicGrammarActivity::class.java)//获取intent对象
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+        startActivity(intent)// 获取class是使用::反射
+    }
+
+    fun jumptoAnkoToXml() {
+        val intent = Intent()
+        intent.setClass(MainActivity@this, AnkoToXml::class.java)//获取intent对象
         intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
         startActivity(intent)// 获取class是使用::反射
     }

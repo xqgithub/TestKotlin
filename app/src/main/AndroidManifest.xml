@@ -19,6 +19,8 @@
         </activity>
         <activity android:name=".haha.activity.BasicGrammarActivity">
         </activity>
+        <activity android:name=".haha.activity.AnkoToXml">
+        </activity>
     </application>
 
 </manifest>
