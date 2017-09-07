@@ -34,17 +34,17 @@ class MainListAdapter(val items: List<String>) : RecyclerView.Adapter<MainListAd
                 val intent = Intent()
                 intent.setClass(mcontext, BasicGrammarActivity::class.java)//获取intent对象
                 intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
-                mcontext!!.startActivity(intent)// 获取class是使用::反射
+                mcontext?.startActivity(intent)// 获取class是使用::反射
             } else if (position == 1) {
                 val intent = Intent()
                 intent.setClass(mcontext, TestRecyclerview::class.java)//获取intent对象
                 intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
-                mcontext!!.startActivity(intent)// 获取class是使用::反射
+                mcontext?.startActivity(intent)// 获取class是使用::反射
             } else if (position == 2) {
                 val intent = Intent()
                 intent.setClass(mcontext, AnkoToXml::class.java)//获取intent对象
                 intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
-                mcontext!!.startActivity(intent)// 获取class是使用::反射
+                mcontext?.startActivity(intent)// 获取class是使用::反射
             }
         }
     }

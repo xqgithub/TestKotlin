@@ -23,7 +23,8 @@ class BasicGrammarActivity : AppCompatActivity() {
 //        testWhen(1)
 //        testFor(stringArray, 2)
 //        testRanges(4, 12)
-        testContains(stringArray, "UK")
+//        testContains(stringArray, "UK")
+        testMap()
     }
 
     /**
@@ -157,6 +158,17 @@ class BasicGrammarActivity : AppCompatActivity() {
             println(arg + "----->在该集合内")
         } else {
             println(arg + "----->不在该集合内")
+        }
+    }
+
+    /**
+     * 习惯用法
+     * 遍历 map/list 中的键值对
+     */
+    fun testMap() {
+        val map = mapOf("a" to 1, "b" to 2, "c" to 3)
+        for ((k, v) in map) {
+            println("$k -> $v")
         }
     }
 
