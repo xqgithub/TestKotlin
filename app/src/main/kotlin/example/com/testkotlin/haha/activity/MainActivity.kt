@@ -3,15 +3,20 @@ package example.com.testkotlin.haha.activity
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.widget.Toast
 import example.com.testkotlin.R
+import example.com.testkotlin.haha.adapter.MainListAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
 
     val TAG: String = "MainActivity"
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -24,7 +29,16 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         button_main.setOnClickListener(this)
 //        TestVariableAndAttribute.test1()
+
+        initView()
     }
+
+    fun initView() {
+        val rv_main = findViewById(R.id.rv_main) as RecyclerView
+        rv_main.layoutManager = LinearLayoutManager(this)
+        rv_main.adapter = MainListAdapter(items)
+    }
+
 
     fun add(x: Int, y: Int): Int {
         return x + y
@@ -43,7 +57,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
      */
     override fun onClick(v: View) {
         when (v.id) {
-            R.id.button_main -> jumptoAnkoToXml()
+            R.id.button_main -> jumptoBasicGrammar()
         }
     }
 
@@ -71,4 +85,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
         startActivity(intent)// 获取class是使用::反射
     }
+
+
+    /**
+     *测试数据
+     */
+    private val items = listOf<String>(
+            "jump to BasicGrammar",
+            "jump to TestRecyclerview",
+            "jump to AnkoToXml"
+    )
 }

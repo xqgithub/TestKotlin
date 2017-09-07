@@ -20,7 +20,9 @@ class BasicGrammarActivity : AppCompatActivity() {
 //        testArray(stringArray1)
 //        Log.i(TAG, testAutomaticCasts("12").toString())
 //        testForCycle(stringArray)
-        testWhen(1)
+//        testWhen(1)
+//        testFor(stringArray, 2)
+        testRanges(4, 12)
     }
 
     /**
@@ -105,10 +107,58 @@ class BasicGrammarActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * 使用 for 循环
+     */
+    fun testFor(args: Array<String>, type: Int) {
+        if (type == 1) {
+            for (arg in args) {
+                println("this is type 1：" + arg)
+            }
+        } else if (type == 2) {
+            for (i in args.indices) {
+                println("this is type 2：" + args[i])
+            }
+        }
+
+    }
+
+    /**
+     *使用区间（ranges）
+     */
+    fun testRanges(type: Int, i: Int) {
+        if (type == 1) {
+            if (i in 1..10) {// equivalent of 1 <= i && i <= 10
+                println(i.toString() + ":in the range")
+            } else if (i !in 1..10) {
+                println(i.toString() + ":not in the range")
+            }
+        } else if (type == 2) {
+            for (i in 1..10) {//遍历数字
+                println("在1-10范围内的数值：" + "$i")
+            }
+        } else if (type == 3) {
+            for (i in 10 downTo 1) {//遍历数字颠倒顺序
+                println("在1-10范围内的数值：" + "$i")
+            }
+        } else if (type == 4) {
+            for (i in 10 downTo 1 step 2) {//任意进行数量的迭代
+                println("在1-10范围内的数值：" + "$i")
+            }
+        }
+    }
+
+    /**
+     * 集合contains的用法
+     */
+
+
+
+
 
     /**
      *测试数据
      */
-    //    val stringArray = arrayOf("UK", "Germany", "Italy")
+    val stringArray = arrayOf("UK", "Germany", "Italy")
     val stringArray1 = emptyArray<String>()//长度为0的空数组
 }

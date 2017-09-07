@@ -8,7 +8,8 @@
         android:id="@+id/tv_main"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="haha"/>
+        android:text="haha"
+        android:visibility="gone"/>
 
     <Button
         android:id="@+id/button_main"
@@ -17,5 +18,13 @@
         android:layout_below="@+id/tv_main"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="27dp"
-        android:text="跳转"/>
+        android:text="跳转"
+        android:visibility="gone"/>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
 </RelativeLayout>
