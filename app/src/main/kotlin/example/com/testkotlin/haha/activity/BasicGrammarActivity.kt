@@ -22,7 +22,8 @@ class BasicGrammarActivity : AppCompatActivity() {
 //        testForCycle(stringArray)
 //        testWhen(1)
 //        testFor(stringArray, 2)
-        testRanges(4, 12)
+//        testRanges(4, 12)
+        testContains(stringArray, "UK")
     }
 
     /**
@@ -151,9 +152,13 @@ class BasicGrammarActivity : AppCompatActivity() {
     /**
      * 集合contains的用法
      */
-
-
-
+    fun testContains(args: Array<String>, arg: String) {
+        if (arg in args) {
+            println(arg + "----->在该集合内")
+        } else {
+            println(arg + "----->不在该集合内")
+        }
+    }
 
 
     /**
