@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="example.com.testkotlin">
+          package="example.com.testkotlin"
+          android:installLocation="preferExternal">
 
     <application
         android:allowBackup="true"
@@ -20,6 +21,8 @@
         <activity android:name=".haha.activity.BasicGrammarActivity">
         </activity>
         <activity android:name=".haha.activity.AnkoToXml">
+        </activity>
+        <activity android:name=".haha.activity.ControlflowActivity">
         </activity>
     </application>
 

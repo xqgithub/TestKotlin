@@ -93,6 +93,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private val items = listOf<String>(
             "jump to BasicGrammar",
             "jump to TestRecyclerview",
-            "jump to AnkoToXml"
+            "jump to AnkoToXml",
+            "jump to Controlflow"
     )
 }

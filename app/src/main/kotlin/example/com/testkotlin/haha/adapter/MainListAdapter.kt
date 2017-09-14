@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import example.com.testkotlin.R
 import example.com.testkotlin.haha.activity.AnkoToXml
 import example.com.testkotlin.haha.activity.BasicGrammarActivity
+import example.com.testkotlin.haha.activity.ControlflowActivity
 import example.com.testkotlin.haha.activity.TestRecyclerview
 import kotlinx.android.synthetic.main.adapter_item_main_list.view.*
 
@@ -43,6 +44,11 @@ class MainListAdapter(val items: List<String>) : RecyclerView.Adapter<MainListAd
             } else if (position == 2) {
                 val intent = Intent()
                 intent.setClass(mcontext, AnkoToXml::class.java)//获取intent对象
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+                mcontext?.startActivity(intent)// 获取class是使用::反射
+            } else if (position == 3) {
+                val intent = Intent()
+                intent.setClass(mcontext, ControlflowActivity::class.java)//获取intent对象
                 intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
                 mcontext?.startActivity(intent)// 获取class是使用::反射
             }
