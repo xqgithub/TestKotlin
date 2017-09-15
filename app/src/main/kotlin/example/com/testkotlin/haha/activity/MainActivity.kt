@@ -90,10 +90,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     /**
      *测试数据
      */
-    private val items = listOf<String>(
+    public val items = listOf<String>(
             "jump to BasicGrammar",
             "jump to TestRecyclerview",
             "jump to AnkoToXml",
-            "jump to Controlflow"
+            "jump to Controlflow",
+            "jump to ReturnsAndJumps"
     )
 }

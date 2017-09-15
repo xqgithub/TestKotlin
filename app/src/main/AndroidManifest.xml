@@ -24,6 +24,8 @@
         </activity>
         <activity android:name=".haha.activity.ControlflowActivity">
         </activity>
+        <activity android:name=".haha.activity.ReturnsAndJumpsActivity">
+        </activity>
     </application>
 
 </manifest>

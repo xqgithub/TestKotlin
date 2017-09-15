@@ -52,8 +52,6 @@ class ControlflowActivity : AppCompatActivity() {
         for (i in stringArray.indices) {
             println("$TAG----->" + stringArray[i])
         }
-
-
     }
 
 

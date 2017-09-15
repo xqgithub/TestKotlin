@@ -7,10 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import example.com.testkotlin.R
-import example.com.testkotlin.haha.activity.AnkoToXml
-import example.com.testkotlin.haha.activity.BasicGrammarActivity
-import example.com.testkotlin.haha.activity.ControlflowActivity
-import example.com.testkotlin.haha.activity.TestRecyclerview
+import example.com.testkotlin.haha.activity.*
 import kotlinx.android.synthetic.main.adapter_item_main_list.view.*
 
 /**
@@ -32,25 +29,15 @@ class MainListAdapter(val items: List<String>) : RecyclerView.Adapter<MainListAd
         holder.view.tv_adapter_item.setOnClickListener {
 //            println("$TAG----->" + holder.view.tv_adapter_item.text)
             if (position == 0) {
-                val intent = Intent()
-                intent.setClass(mcontext, BasicGrammarActivity::class.java)//获取intent对象
-                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
-                mcontext?.startActivity(intent)// 获取class是使用::反射
+                jumpToActivity(BasicGrammarActivity::class.java)
             } else if (position == 1) {
-                val intent = Intent()
-                intent.setClass(mcontext, TestRecyclerview::class.java)//获取intent对象
-                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
-                mcontext?.startActivity(intent)// 获取class是使用::反射
+                jumpToActivity(TestRecyclerview::class.java)
             } else if (position == 2) {
-                val intent = Intent()
-                intent.setClass(mcontext, AnkoToXml::class.java)//获取intent对象
-                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
-                mcontext?.startActivity(intent)// 获取class是使用::反射
+                jumpToActivity(AnkoToXml::class.java)
             } else if (position == 3) {
-                val intent = Intent()
-                intent.setClass(mcontext, ControlflowActivity::class.java)//获取intent对象
-                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
-                mcontext?.startActivity(intent)// 获取class是使用::反射
+                jumpToActivity(ControlflowActivity::class.java)
+            } else if (position == 4) {
+                jumpToActivity(ReturnsAndJumpsActivity::class.java)
             }
         }
     }
@@ -65,4 +52,13 @@ class MainListAdapter(val items: List<String>) : RecyclerView.Adapter<MainListAd
     class ViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
 
     }
+
+    fun jumpToActivity(clazz: Class<*>) {
+        val intent = Intent()
+        intent.setClass(mcontext, clazz)//获取intent对象
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+        mcontext?.startActivity(intent)// 获取class是使用::反射
+    }
+
+
 }
