@@ -95,6 +95,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             "jump to TestRecyclerview",
             "jump to AnkoToXml",
             "jump to Controlflow",
-            "jump to ReturnsAndJumps"
+            "jump to ReturnsAndJumps",
+            "jump to ClassInherit"
     )
 }

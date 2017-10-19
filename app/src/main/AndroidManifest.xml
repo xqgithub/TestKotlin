@@ -26,6 +26,8 @@
         </activity>
         <activity android:name=".haha.activity.ReturnsAndJumpsActivity">
         </activity>
+        <activity android:name=".haha.activity.ClassInheritActivity">
+        </activity>
     </application>
 
 </manifest>

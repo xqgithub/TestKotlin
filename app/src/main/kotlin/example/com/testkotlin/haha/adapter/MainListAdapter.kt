@@ -38,6 +38,8 @@ class MainListAdapter(val items: List<String>) : RecyclerView.Adapter<MainListAd
                 jumpToActivity(ControlflowActivity::class.java)
             } else if (position == 4) {
                 jumpToActivity(ReturnsAndJumpsActivity::class.java)
+            } else if (position == 5) {
+                jumpToActivity(ClassInheritActivity::class.java)
             }
         }
     }
