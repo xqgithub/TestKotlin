@@ -3,7 +3,13 @@ package example.com.testkotlin.haha.domain
 /**
  * Created by admin on 2017/9/15.
  */
-class Person {
+class Person(name: String) {
+
+    val TAG: String = "Person"
+
+    init {
+        println("$TAG--我是构造参数--->" + name.toUpperCase())
+    }
 
     var lastName: String = "zhang"
         get() = field.toUpperCase()   // 将变量赋值后转换为大写

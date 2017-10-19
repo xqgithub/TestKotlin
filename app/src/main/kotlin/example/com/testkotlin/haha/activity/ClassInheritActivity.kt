@@ -14,11 +14,12 @@ class ClassInheritActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        testPerson()
+//        testPerson()
+        testPerson2()
     }
 
     fun testPerson() {
-        var person: Person = Person()
+        var person: Person = Person("wahaha")
         person.lastName = "haizeiwang"
         println("$TAG----->" + person.lastName)
 
@@ -29,4 +30,11 @@ class ClassInheritActivity : AppCompatActivity() {
         person.no = 17
         println("$TAG----->" + person.no)
     }
+
+
+    fun testPerson2() {
+        var person: Person = Person("wahaha")
+    }
+
+
 }
