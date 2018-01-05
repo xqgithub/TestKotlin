@@ -11,7 +11,7 @@ class Person(name: String) {
         println("$TAG--我是构造参数--->" + name.toUpperCase())
     }
 
-    var lastName: String = "zhang"
+    var lastName: String = "zhouxingxing"
         get() = field.toUpperCase()   // 将变量赋值后转换为大写
 
     var no: Int = 100
@@ -23,5 +23,6 @@ class Person(name: String) {
                 field = -1         // 如果传入的值大于等于 10 返回 -1
             }
         }
+
 
 }

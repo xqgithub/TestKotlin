@@ -6,7 +6,8 @@ import android.util.Log
 import example.com.testkotlin.R
 
 /**
- *基本语法
+ * Created by XQ on 2018/01/03.
+ * 基本语法
  */
 class BasicGrammarActivity : AppCompatActivity() {
 

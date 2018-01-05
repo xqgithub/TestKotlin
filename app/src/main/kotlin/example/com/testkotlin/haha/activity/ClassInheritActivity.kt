@@ -2,10 +2,11 @@ package example.com.testkotlin.haha.activity
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import example.com.testkotlin.haha.domain.Inheritedclass
 import example.com.testkotlin.haha.domain.Person
 
 /**
- * Created by admin on 2017/9/15.
+ * Created by XQ on 2017/9/15.
  * 类和继承
  */
 class ClassInheritActivity : AppCompatActivity() {
@@ -15,7 +16,8 @@ class ClassInheritActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 //        testPerson()
-        testPerson2()
+//        testPerson2()
+        testBase()
     }
 
     fun testPerson() {
@@ -34,6 +36,12 @@ class ClassInheritActivity : AppCompatActivity() {
 
     fun testPerson2() {
         var person: Person = Person("wahaha")
+    }
+
+    fun testBase() {
+        var inheritedclass: Inheritedclass = Inheritedclass()
+        inheritedclass.allowRewrite()
+        inheritedclass.unAllowRewrite()
     }
 
 
