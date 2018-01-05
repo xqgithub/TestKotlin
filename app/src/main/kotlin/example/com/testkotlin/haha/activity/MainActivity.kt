@@ -96,6 +96,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             "jump to AnkoToXml",
             "jump to Controlflow",
             "jump to ReturnsAndJumps",
-            "jump to ClassInherit"
+            "jump to ClassInherit",
+            "jump to Expand"
     )
 }

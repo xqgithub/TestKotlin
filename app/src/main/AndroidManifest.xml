@@ -4,6 +4,7 @@
           android:installLocation="preferExternal">
 
     <application
+        android:name=".haha.app.MyApp"
         android:allowBackup="true"
         android:icon="@mipmap/timg"
         android:label="@string/app_name"
@@ -27,6 +28,8 @@
         <activity android:name=".haha.activity.ReturnsAndJumpsActivity">
         </activity>
         <activity android:name=".haha.activity.ClassInheritActivity">
+        </activity>
+        <activity android:name=".haha.activity.ExpandActivity">
         </activity>
     </application>
 
