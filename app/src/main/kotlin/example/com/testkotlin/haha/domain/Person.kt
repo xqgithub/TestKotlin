@@ -1,7 +1,8 @@
 package example.com.testkotlin.haha.domain
 
 /**
- * Created by admin on 2017/9/15.
+ * Created by XQ on 2017/9/15.
+ * 属性和字段
  */
 class Person(name: String) {
 
@@ -23,6 +24,5 @@ class Person(name: String) {
                 field = -1         // 如果传入的值大于等于 10 返回 -1
             }
         }
-
 
 }
