@@ -2,7 +2,7 @@ package example.com.testkotlin.haha.activity
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import example.com.testkotlin.haha.domain.Inheritedclass
+import example.com.testkotlin.haha.domain.Inherited
 import example.com.testkotlin.haha.domain.Person
 
 /**
@@ -39,9 +39,9 @@ class ClassInheritActivity : AppCompatActivity() {
     }
 
     fun testBase() {
-        var inheritedclass: Inheritedclass = Inheritedclass()
+        var inheritedclass: Inherited = Inherited()
         inheritedclass.allowRewrite()
-        inheritedclass.unAllowRewrite()
+//        inheritedclass.unAllowRewrite()
     }
 
 
