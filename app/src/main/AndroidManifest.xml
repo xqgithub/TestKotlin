@@ -33,6 +33,8 @@
         </activity>
         <activity android:name=".haha.activity.DataClassActivity">
         </activity>
+        <activity android:name=".haha.activity.GenericActivity">
+        </activity>
     </application>
 
 </manifest>

@@ -44,6 +44,8 @@ class MainListAdapter(val items: List<String>) : RecyclerView.Adapter<MainListAd
                 jumpToActivity(ExpandActivity::class.java)
             } else if (position == 7) {
                 jumpToActivity(DataClassActivity::class.java)
+            } else if (position == 8) {
+                jumpToActivity(GenericActivity::class.java)
             }
         }
     }

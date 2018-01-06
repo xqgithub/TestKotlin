@@ -98,6 +98,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             "jump to ReturnsAndJumps",
             "jump to ClassInherit",
             "jump to Expand",
-            "jump to DataClass"
+            "jump to DataClass",
+            "jump to Generic"
     )
 }
