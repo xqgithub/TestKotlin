@@ -19,7 +19,8 @@ class GenericActivity : AppCompatActivity() {
 
 //        test0()
 //        test1()
-        test2()
+//        test2()
+        test3()
     }
 
     /**
@@ -87,6 +88,13 @@ class GenericActivity : AppCompatActivity() {
 //        println(boxInt.foo())
         println(boxString.foo("1"))
     }
+
+    fun test3() {
+        var mutable = mutableListOf<String>()
+        mutable.add("1111")
+        println(mutable)
+    }
+
 
 }
 
