@@ -13,6 +13,7 @@ class IterableActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_iterable)
+        test1()
     }
 
     /**
@@ -53,6 +54,7 @@ class IterableActivity : AppCompatActivity() {
                 "诺克萨斯",
                 "祖安"
         )
+
         val isContainsAll = list.containsAll(list2)   //判断集合中是否包含另一个集合    Boolean
         val indexStr = list.get(2)    //查询集合中某个位置的元素值 <E>
         val index = list.indexOf("李青")    //返回集合中某个元素首次出现的索引，如果不存在则返回-1 Int

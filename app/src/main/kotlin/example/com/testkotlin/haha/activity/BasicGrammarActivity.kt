@@ -3,6 +3,7 @@ package example.com.testkotlin.haha.activity
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import com.safframework.log.L
 import example.com.testkotlin.R
 
 /**
@@ -16,8 +17,9 @@ class BasicGrammarActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_basic_grammar)
+        L.init(this.javaClass)//加载日志类TAG
 
-//        testLocalvariables()
+        testLocalvariables()
 //        testArray(stringArray1)
 //        Log.i(TAG, testAutomaticCasts("12").toString())
 //        testForCycle(stringArray)
@@ -25,7 +27,7 @@ class BasicGrammarActivity : AppCompatActivity() {
 //        testFor(stringArray, 2)
 //        testRanges(4, 12)
 //        testContains(stringArray, "UK")
-        testMap()
+//        testMap()
     }
 
     /**
@@ -44,9 +46,12 @@ class BasicGrammarActivity : AppCompatActivity() {
         val b = 1  // `Int` 类型自动推断
         val c: Int // 如果没有初始值，声明常量时，常量的类型不能省略
         c = 1 // 明确赋值
-        Log.i(TAG, a.toString())
-        Log.i(TAG, b.toString())
-        Log.i(TAG, c.toString())
+//        Log.i(TAG, a.toString())
+//        Log.i(TAG, b.toString())
+//        Log.i(TAG, c.toString())
+        L.i(a.toString())
+        L.i(b.toString())
+        L.i(c.toString())
         //变量
         var x = 5 // `Int` 类型自动推断（ 5 默认是 `Int` ）
         x += 1
