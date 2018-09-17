@@ -1,13 +1,14 @@
 package example.com.testkotlin.haha.app
 
-import android.app.Application
 import android.content.Context
+import android.support.multidex.MultiDex
+import android.support.multidex.MultiDexApplication
 
 /**
  * Created by XQ on 2018/1/5.
  * 我的Application
  */
-class MyApp : Application() {
+class MyApp : MultiDexApplication() {
 
     override fun onCreate() {
         super.onCreate()
@@ -15,6 +16,12 @@ class MyApp : Application() {
     }
 
     companion object {
-        lateinit var context: Context
+         var context: Context? = null
+    }
+
+
+    override fun attachBaseContext(base: Context?) {
+        super.attachBaseContext(base)
+        MultiDex.install(context)
     }
 }

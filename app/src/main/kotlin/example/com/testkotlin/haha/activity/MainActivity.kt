@@ -7,10 +7,8 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.widget.Toast
-import com.safframework.log.L
 import example.com.testkotlin.R
 import example.com.testkotlin.haha.adapter.MainListAdapter
-import example.com.testkotlin.haha.utils.CompanionUtil
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -36,17 +34,19 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         initView()
 
-        L.i("屏幕宽度(像素)----->" + CompanionUtil.getScreenWidth() + ";"
-                + "屏幕高度(像素)----->" + CompanionUtil.getScreenHeight())
-        L.i("屏幕宽度(dp)----->" + CompanionUtil.getScreenWidthDP(mActivity) + ";"
-                + "屏幕高度(dp)----->" + CompanionUtil.getScreenHeightDP(mActivity))
+//        L.i("屏幕宽度(像素)----->" + CompanionUtil.getScreenWidth() + ";"
+//                + "屏幕高度(像素)----->" + CompanionUtil.getScreenHeight())
+//        L.i("屏幕宽度(dp)----->" + CompanionUtil.getScreenWidthDP(mActivity) + ";"
+//                + "屏幕高度(dp)----->" + CompanionUtil.getScreenHeightDP(mActivity))
+//        L.i("屏幕密度----->" + CompanionUtil.getScreenDensity(mActivity) + ";"
+//                + "屏幕密度densityDpi----->" + CompanionUtil.getScreendensityDpi(mActivity))
 
 
     }
 
     fun initView() {
         val rv_main = findViewById(R.id.rv_main) as RecyclerView
-        rv_main.layoutManager = LinearLayoutManager(this)
+        rv_main.layoutManager = LinearLayoutManager(mActivity)
         rv_main.adapter = MainListAdapter(items)
     }
 

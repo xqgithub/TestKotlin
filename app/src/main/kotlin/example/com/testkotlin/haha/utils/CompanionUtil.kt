@@ -24,7 +24,8 @@ class CompanionUtil {
          * 等屏幕的宽度  px
          */
         fun getScreenWidth(): Int {
-            val windowManager = MyApp.context.getSystemService(Context.WINDOW_SERVICE) as WindowManager
+
+            val windowManager = MyApp.context!!.getSystemService(Context.WINDOW_SERVICE) as WindowManager
             val dm = DisplayMetrics()// 创建了一张白纸
             windowManager.defaultDisplay.getMetrics(dm)// 给白纸设置宽高
             return dm.widthPixels
@@ -34,7 +35,7 @@ class CompanionUtil {
          * 得到屏幕的高度 px
          */
         fun getScreenHeight(): Int {
-            val windowManager = MyApp.context.getSystemService(Context.WINDOW_SERVICE) as WindowManager
+            val windowManager = MyApp.context!!.getSystemService(Context.WINDOW_SERVICE) as WindowManager
             val dm = DisplayMetrics()// 创建了一张白纸
             windowManager.defaultDisplay.getMetrics(dm)// 给白纸设置宽高
             return dm.heightPixels
@@ -43,7 +44,7 @@ class CompanionUtil {
         /**
          * 得到设备的密度
          */
-        fun  getScreenDensity(context:Context):Float{
+        fun getScreenDensity(context: Context): Float {
             return context.resources.displayMetrics.density
         }
 
@@ -53,18 +54,19 @@ class CompanionUtil {
         fun getScreendensityDpi(context: Context): Int {
             return context.resources.displayMetrics.densityDpi
         }
+
         /**
          * 获取屏幕宽度 dp
          */
-        fun getScreenWidthDP(context: Context):Int{
+        fun getScreenWidthDP(context: Context): Int {
             return (getScreenWidth() / getScreenDensity(context)).toInt()
         }
 
         /**
          * 获取屏幕的高度 dp
          */
-        fun getScreenHeightDP(context: Context):Int{
-            return (getScreenHeight()/ getScreenDensity(context)).toInt()
+        fun getScreenHeightDP(context: Context): Int {
+            return (getScreenHeight() / getScreenDensity(context)).toInt()
         }
     }
 

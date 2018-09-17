@@ -16,7 +16,7 @@ import example.com.testkotlin.haha.app.MyApp
  *吐司
  */
 fun Context.toasthaha(message: String, length: Int = Toast.LENGTH_SHORT) {
-    Toast.makeText(MyApp.context, message, length).show()
+    Toast.makeText(MyApp.context!!, message, length).show()
 }
 
 /**
