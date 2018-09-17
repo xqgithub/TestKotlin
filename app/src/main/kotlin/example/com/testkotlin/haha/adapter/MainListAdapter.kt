@@ -59,8 +59,7 @@ class MainListAdapter(val items: List<String>) : RecyclerView.Adapter<MainListAd
     }
 
 
-    class ViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
-
+    class ViewHolder(val view: View) : RecyclerView.ViewHolder(view){
     }
 
     fun jumpToActivity(clazz: Class<*>) {

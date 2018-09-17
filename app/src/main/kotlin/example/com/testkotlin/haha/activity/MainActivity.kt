@@ -7,14 +7,18 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.widget.Toast
+import com.safframework.log.L
 import example.com.testkotlin.R
 import example.com.testkotlin.haha.adapter.MainListAdapter
+import example.com.testkotlin.haha.utils.CompanionUtil
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
 
     val TAG: String = "MainActivity"
+
+    val mActivity = MainActivity@ this
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,6 +35,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 //        TestVariableAndAttribute.test1()
 
         initView()
+
+        L.i("屏幕宽度(像素)----->" + CompanionUtil.getScreenWidth() + ";"
+                + "屏幕高度(像素)----->" + CompanionUtil.getScreenHeight())
+        L.i("屏幕宽度(dp)----->" + CompanionUtil.getScreenWidthDP(mActivity) + ";"
+                + "屏幕高度(dp)----->" + CompanionUtil.getScreenHeightDP(mActivity))
+
+
     }
 
     fun initView() {
@@ -66,7 +77,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
      */
     fun jump() {
         val intent = Intent()
-        intent.setClass(MainActivity@this, TestRecyclerview::class.java)//获取intent对象
+        intent.setClass(MainActivity@ this, TestRecyclerview::class.java)//获取intent对象
         intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
         startActivity(intent)// 获取class是使用::反射
         toast("已经跳转到TestRecyclerview页面", 0)
@@ -74,14 +85,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     fun jumptoBasicGrammar() {
         val intent = Intent()
-        intent.setClass(MainActivity@this, BasicGrammarActivity::class.java)//获取intent对象
+        intent.setClass(MainActivity@ this, BasicGrammarActivity::class.java)//获取intent对象
         intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
         startActivity(intent)// 获取class是使用::反射
     }
 
     fun jumptoAnkoToXml() {
         val intent = Intent()
-        intent.setClass(MainActivity@this, AnkoToXml::class.java)//获取intent对象
+        intent.setClass(MainActivity@ this, AnkoToXml::class.java)//获取intent对象
         intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
         startActivity(intent)// 获取class是使用::反射
     }

@@ -3,7 +3,8 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 buildscript {
-    ext.kotlin_version = "1.0.0-rc-1036"
+    ext.kotlin_version = "1.0.4"
+//    ext.kotlin_version = "1.0.0-rc-1036"
 
     repositories {
         jcenter()
@@ -15,7 +16,7 @@ buildscript {
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.3"
+    buildToolsVersion '28.0.2'
 
     defaultConfig {
         applicationId "example.com.testkotlin"
