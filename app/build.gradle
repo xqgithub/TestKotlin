@@ -3,7 +3,8 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 buildscript {
-    ext.kotlin_version = "1.0.4"
+    ext.kotlin_version = "1.2.0"
+//    ext.kotlin_version = "1.0.4"
 //    ext.kotlin_version = "1.0.0-rc-1036"
 
     repositories {

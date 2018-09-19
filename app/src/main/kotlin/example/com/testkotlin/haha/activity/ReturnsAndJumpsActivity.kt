@@ -47,7 +47,7 @@ class ReturnsAndJumpsActivity : AppCompatActivity() {
             if (it >= 10) {
                 return@continuing
             }
-            println("$TAG----->it==" + it)
+            println("$TAG----->it 是 $it")
         }
         println("$TAG----->haha")
     }
