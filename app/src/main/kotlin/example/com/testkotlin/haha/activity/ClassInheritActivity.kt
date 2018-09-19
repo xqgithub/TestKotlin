@@ -2,6 +2,7 @@ package example.com.testkotlin.haha.activity
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import com.safframework.log.L
 import example.com.testkotlin.haha.domain.Inherited
 import example.com.testkotlin.haha.domain.Person
 
@@ -24,24 +25,26 @@ class ClassInheritActivity : AppCompatActivity() {
         var person: Person = Person("wahaha")
         person.lastName = "haizeiwang"
         println("$TAG----->" + person.lastName)
+        L.i("person.lastName----->" + person.lastName)
 
         person.no = 7
-        println("$TAG----->" + person.no)
-
+        L.i("person.no----->" + person.no)
 
         person.no = 17
-        println("$TAG----->" + person.no)
+        L.i("person.no----->" + person.no)
     }
 
 
     fun testPerson2() {
-        var person: Person = Person("wahaha")
+//        var person: Person = Person("wahaha")
+        Person("luefei", 17)
     }
 
     fun testBase() {
-        var inheritedclass: Inherited = Inherited()
-        inheritedclass.allowRewrite()
+        var inheritedclass: Inherited = Inherited("路飞", "索隆")
+//        inheritedclass.allowRewrite()
 //        inheritedclass.unAllowRewrite()
+//        inheritedclass.Baz().g()
     }
 
 
