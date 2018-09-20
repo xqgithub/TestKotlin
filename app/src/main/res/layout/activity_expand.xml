@@ -11,6 +11,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="左边距离到底是什么呢？"
-        android:textSize="14sp"/>
+        android:textSize="@dimen/deimen_14x"/>
+
+
+    <Button
+        android:id="@+id/btn_expand_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/deimen_30x"
+        android:text="吐司1"/>
+
+    <Button
+        android:id="@+id/btn_expand_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_expand_1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/deimen_10x"
+        android:text="吐司2"/>
+
 
 </RelativeLayout>
