@@ -113,6 +113,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             "jump to Expand",
             "jump to DataClass",
             "jump to Generic",
-            "jump to Iterable"
+            "jump to Iterable",
+            "jump to AttributesFields"
     )
 }

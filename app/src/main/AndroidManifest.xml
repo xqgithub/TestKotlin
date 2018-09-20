@@ -37,6 +37,8 @@
         </activity>
         <activity android:name=".haha.activity.IterableActivity">
         </activity>
+        <activity android:name=".haha.activity.AttributesFieldsActivity">
+        </activity>
     </application>
 
 </manifest>

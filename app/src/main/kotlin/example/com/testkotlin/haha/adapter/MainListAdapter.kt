@@ -27,7 +27,7 @@ class MainListAdapter(val items: List<String>) : RecyclerView.Adapter<MainListAd
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.view.tv_adapter_item.text = items[position]
         holder.view.tv_adapter_item.setOnClickListener {
-//            println("$TAG----->" + holder.view.tv_adapter_item.text)
+            //            println("$TAG----->" + holder.view.tv_adapter_item.text)
             if (position == 0) {
                 jumpToActivity(BasicGrammarActivity::class.java)
             } else if (position == 1) {
@@ -48,6 +48,8 @@ class MainListAdapter(val items: List<String>) : RecyclerView.Adapter<MainListAd
                 jumpToActivity(GenericActivity::class.java)
             } else if (position == 9) {
                 jumpToActivity(IterableActivity::class.java)
+            } else if (position == 10) {
+                jumpToActivity(AttributesFieldsActivity::class.java)
             }
         }
     }
@@ -59,7 +61,7 @@ class MainListAdapter(val items: List<String>) : RecyclerView.Adapter<MainListAd
     }
 
 
-    class ViewHolder(val view: View) : RecyclerView.ViewHolder(view){
+    class ViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
     }
 
     fun jumpToActivity(clazz: Class<*>) {
