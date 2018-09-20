@@ -1,6 +1,8 @@
 package example.com.testkotlin.haha.utils
 
 import android.content.Context
+import android.util.SparseArray
+import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
@@ -44,6 +46,22 @@ var TextView.leftMargin: Int
  * 7.reapt      顾名思义，repeat 就是重复的意思，它接受函数和整数作为参数，函数会被调用 n 次，这个函数避免写循环
  * 8.require/assert/check     用来检测条件是否为true, 否则抛出异常。 其中 require 用在参数检查； 而 assert/check 用在内部状态检查，assert 抛出 AssertionException 、 check 抛出 IllegalStateException
  */
+
+
+
+/**
+ *Kotlin 实现 ViewHolder 的扩展函数 实现和使用起来更加方便流畅，甚至都感觉不到 ViewHolder 这种特殊机制的存在
+ */
+fun <T : View> View.findViewOften(viewId: Int): T {
+    var viewHolder: SparseArray<View> = tag as? SparseArray<View> ?: SparseArray()
+    tag = viewHolder
+    var childView: View? = viewHolder.get(viewId)
+    if (null == childView) {
+        childView = findViewById(viewId)
+        viewHolder.put(viewId, childView)
+    }
+    return childView as T
+}
 
 
 
