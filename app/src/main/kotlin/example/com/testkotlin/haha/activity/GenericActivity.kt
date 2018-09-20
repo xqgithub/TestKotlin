@@ -2,6 +2,7 @@ package example.com.testkotlin.haha.activity
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import com.safframework.log.L
 import example.com.testkotlin.R
 
 /**
@@ -19,8 +20,8 @@ class GenericActivity : AppCompatActivity() {
 
 //        test0()
 //        test1()
-//        test2()
-        test3()
+        test2()
+//        test3()
     }
 
     /**
@@ -45,7 +46,8 @@ class GenericActivity : AppCompatActivity() {
 
 
     /**
-     *泛型类
+     * 泛型类
+     * 果既将泛型作为函数参数，又将泛型作为函数的输出，那就既不用 in 或 out
      */
     class Box<T>(t: T) {
         var value = t
@@ -61,7 +63,8 @@ class GenericActivity : AppCompatActivity() {
 
     /**
      * 声明处的类型变异
-     * 消费者 in
+     * 生产者 out(协变)
+     * 如果你的类是将泛型作为内部方法的返回，那么可以用 out
      */
     class Box1<out T>(val t: T) {
         fun foo(): T {
@@ -70,7 +73,8 @@ class GenericActivity : AppCompatActivity() {
     }
 
     /**
-     * 生产者 out
+     * 消费者 in（逆变）
+     * 如果你的类是将泛型对象作为函数的参数，那么可以用 in
      */
     class Box2<in T>() {
         fun foo(t: T): String {
@@ -83,10 +87,10 @@ class GenericActivity : AppCompatActivity() {
     }
 
     fun test2() {
-        var boxInt = Box1<Int>(10)
-        var boxString = Box2 <String>()
-//        println(boxInt.foo())
-        println(boxString.foo("1"))
+        var box1: Double = Box1(1.00).foo()
+        var box2 = Box2<Any>().foo("1")
+        L.i("Box1 中返回的是 ")
+        L.i("Box2 中返回的是 $box2")//由于String是Any的是一个子类，所以是可行的。
     }
 
     fun test3() {
