@@ -41,6 +41,8 @@
         </activity>
         <activity android:name=".haha.activity.ObjectAndCompanionObjectActivity">
         </activity>
+        <activity android:name=".haha.activity.EntrustActivity">
+        </activity>
     </application>
 
 </manifest>

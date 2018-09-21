@@ -115,6 +115,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             "jump to Generic",
             "jump to Iterable",
             "jump to AttributesFields",
-            "jump to ObjectAndCompanionObject"
+            "jump to ObjectAndCompanionObject",
+            "jump to Entrust"
     )
 }

@@ -171,7 +171,7 @@ class BasicGrammarActivity : AppCompatActivity() {
      * 习惯用法
      * 遍历 map/list 中的键值对
      */
-    fun testMap() {
+    fun test() {
         val map = mapOf("a" to 1, "b" to 2, "c" to 3)
         for ((k, v) in map) {
             println("$k -> $v")
