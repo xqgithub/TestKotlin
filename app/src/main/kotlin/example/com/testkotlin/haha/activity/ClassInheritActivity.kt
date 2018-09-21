@@ -44,7 +44,8 @@ class ClassInheritActivity : AppCompatActivity() {
         var inheritedclass: Inherited = Inherited("路飞", "索隆")
 //        inheritedclass.allowRewrite()
 //        inheritedclass.unAllowRewrite()
-//        inheritedclass.Baz().g()
+//        inheritedclass.Baz().a()
+        inheritedclass.Baz().b()
     }
 
 

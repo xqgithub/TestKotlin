@@ -4,10 +4,12 @@ import com.safframework.log.L
 
 /**
  * Created by XQ on 2018/1/5.
- * 继承的子类
+ * 1.继承的子类
+ * 2.属性覆盖
+ * 3.内部类
  */
 
-class Inherited(name: String, lastName: String) : Base(){
+class Inherited(name: String, lastName: String) : Base() {
 
     val TAGG: String = "inheritedclass"
 
@@ -54,11 +56,17 @@ class Inherited(name: String, lastName: String) : Base(){
 
     /**
      * 内部类
+     * 类可以标记为 inner
      * 在一个内部类中访问外部类的超类，可以通过由外部类名限定的 super 关键字来实现：super@Outer：
      */
     inner class Baz {
-        fun g() {
+        private val a: Int = 7
+        fun a() {
             super@Inherited.allowRewrite() // 调用 Base 实现的 allowRewrite()
+        }
+
+        fun b() {
+            L.i("这是一个内部类的方法:----->$a")
         }
     }
 }

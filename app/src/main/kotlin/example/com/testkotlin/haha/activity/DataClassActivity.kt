@@ -8,6 +8,7 @@ import example.com.testkotlin.R
 /**
  * Created by XQ on 2018/1/6.
  * 数据类
+ * 我们经常创建一些只保存数据的类
  */
 class DataClassActivity : AppCompatActivity() {
 
@@ -21,13 +22,8 @@ class DataClassActivity : AppCompatActivity() {
         test1()
     }
 
-    fun initView() {
 
-    }
-
-    data class Person(var name: String, var age: Int) {
-
-    }
+    data class Person(var name: String, var age: Int)
 
     data class MyInfo(var no: Int, var person: Person) {
         override fun hashCode(): Int {
