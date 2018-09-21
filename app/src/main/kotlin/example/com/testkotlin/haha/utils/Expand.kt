@@ -48,7 +48,6 @@ var TextView.leftMargin: Int
  */
 
 
-
 /**
  *Kotlin 实现 ViewHolder 的扩展函数 实现和使用起来更加方便流畅，甚至都感觉不到 ViewHolder 这种特殊机制的存在
  */
@@ -62,8 +61,6 @@ fun <T : View> View.findViewOften(viewId: Int): T {
     }
     return childView as T
 }
-
-
 
 
 

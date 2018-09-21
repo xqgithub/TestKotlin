@@ -39,6 +39,8 @@
         </activity>
         <activity android:name=".haha.activity.AttributesFieldsActivity">
         </activity>
+        <activity android:name=".haha.activity.ObjectAndCompanionObjectActivity">
+        </activity>
     </application>
 
 </manifest>

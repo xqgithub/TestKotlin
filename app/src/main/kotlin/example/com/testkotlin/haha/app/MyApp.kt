@@ -10,15 +10,14 @@ import android.support.multidex.MultiDexApplication
  */
 class MyApp : MultiDexApplication() {
 
+    companion object {
+        var context: Context? = null
+    }
+
     override fun onCreate() {
         super.onCreate()
         context = this
     }
-
-    companion object {
-         var context: Context? = null
-    }
-
 
     override fun attachBaseContext(base: Context?) {
         super.attachBaseContext(base)

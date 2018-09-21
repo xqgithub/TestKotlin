@@ -30,6 +30,7 @@ class MainListAdapter(val items: List<String>) : RecyclerView.Adapter<MainListAd
         fun <T : View> findView(viewId: Int): T {
             return view.findViewOften(viewId)
         }
+
         val tv_adapter_item: TextView = findView(R.id.tv_adapter_item)
     }
 
@@ -65,6 +66,8 @@ class MainListAdapter(val items: List<String>) : RecyclerView.Adapter<MainListAd
                 jumpToActivity(IterableActivity::class.java)
             } else if (position == 10) {
                 jumpToActivity(AttributesFieldsActivity::class.java)
+            } else if (position == 11) {
+                jumpToActivity(ObjectAndCompanionObjectActivity::class.java)
             }
         }
     }
