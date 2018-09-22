@@ -1,9 +1,12 @@
 package example.com.testkotlin.haha.activity
 
 import android.os.Bundle
+import com.safframework.log.L
 import example.com.testkotlin.R
+import example.com.testkotlin.haha.app.MyApp
 import example.com.testkotlin.haha.base.BaseActivity
 import example.com.testkotlin.haha.domain.EntrustBaseImpl
+import example.com.testkotlin.haha.utils.SPreferenceUtils
 
 /**
  * Created by beijixiong on 2018/9/21.
@@ -13,6 +16,9 @@ import example.com.testkotlin.haha.domain.EntrustBaseImpl
  * 3.有一种属性，在使用的时候每次都要手动实现它，但是可以做到只实现一次，并且放到库中，一直使用，这种属性称为委托属性
  */
 class EntrustActivity : BaseActivity() {
+
+
+    var test_sp: String by SPreferenceUtils(MyApp.context!!, "xiaoqueque", "haha", "路飞")
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,10 +31,13 @@ class EntrustActivity : BaseActivity() {
 //        entrustbaseimpl.d()
 
 //        var map = mapOf("name" to "John Doe", "age" to 25)
-        var map = mutableMapOf<String, Any>()
-        map["name"] = "queque"
-        map["age"] = 77
-        entrustbaseimpl.e(map)
+//        var map = mutableMapOf<String, Any>()
+//        map["name"] = "queque"
+//        map["age"] = 77
+//        entrustbaseimpl.e(map)
+
+
+        L.i("----->$test_sp")
     }
 
     override fun getLayoutId(): Int {
