@@ -70,6 +70,8 @@ class MainListAdapter(val items: List<String>) : RecyclerView.Adapter<MainListAd
                 jumpToActivity(ObjectAndCompanionObjectActivity::class.java)
             } else if (position == 12) {
                 jumpToActivity(EntrustActivity::class.java)
+            } else if (position == 13) {
+                jumpToActivity(FunctionActivity::class.java)
             }
         }
     }

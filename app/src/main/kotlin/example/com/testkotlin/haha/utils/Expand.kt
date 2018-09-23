@@ -61,9 +61,3 @@ fun <T : View> View.findViewOften(viewId: Int): T {
     }
     return childView as T
 }
-
-
-
-
-
-

@@ -43,6 +43,8 @@
         </activity>
         <activity android:name=".haha.activity.EntrustActivity">
         </activity>
+        <activity android:name=".haha.activity.FunctionActivity">
+        </activity>
     </application>
 
 </manifest>

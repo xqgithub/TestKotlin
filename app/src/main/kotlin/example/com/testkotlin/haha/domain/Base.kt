@@ -30,8 +30,6 @@ open class Base() {//要求父类必须有open标注，不然无法被子类所�
     fun unAllowRewrite() {
         L.i("$TAG----->我是父类，不允许被重写的方法unAllowRewrite")
     }
-
-
 }
 
 

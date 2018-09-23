@@ -74,6 +74,4 @@ abstract class BaseActivity : AppCompatActivity() {
     override fun onStop() {
         super.onStop()
     }
-
-
 }
