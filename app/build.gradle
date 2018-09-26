@@ -3,7 +3,8 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 buildscript {
-    ext.kotlin_version = "1.2.0"
+    ext.kotlin_version = "1.2.61"
+//    ext.kotlin_version = "1.2.0"
 //    ext.kotlin_version = "1.0.4"
 //    ext.kotlin_version = "1.0.0-rc-1036"
 
@@ -62,8 +63,15 @@ dependencies {
     // Stetho
     compile 'com.facebook.stetho:stetho:1.4.1'
     compile 'com.facebook.stetho:stetho-okhttp3:1.4.1'
-
-
+    //coroutines 协程包
+    compile 'org.jetbrains.kotlinx:kotlinx-coroutines-core:0.26.1'
 }
+
+kotlin {             //开始协程实验性功能
+//    experimental {
+//        coroutines 'enable'
+//    }
+}
+
 
 

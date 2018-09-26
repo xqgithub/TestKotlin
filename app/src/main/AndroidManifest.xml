@@ -47,6 +47,8 @@
         </activity>
         <activity android:name=".haha.activity.InlineFunctionActivity">
         </activity>
+        <activity android:name=".haha.activity.CoroutinesActivity">
+        </activity>
     </application>
 
 </manifest>

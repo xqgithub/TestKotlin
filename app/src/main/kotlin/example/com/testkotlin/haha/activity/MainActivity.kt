@@ -116,6 +116,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             "jump to ObjectAndCompanionObject",
             "jump to Entrust",
             "jump to Function",
-            "jump to InlineFunction"
+            "jump to InlineFunction",
+            "jump to Coroutines"
     )
 }

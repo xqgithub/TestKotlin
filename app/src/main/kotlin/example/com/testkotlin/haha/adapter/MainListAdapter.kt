@@ -74,6 +74,8 @@ class MainListAdapter(val items: List<String>) : RecyclerView.Adapter<MainListAd
                 jumpToActivity(FunctionActivity::class.java)
             } else if (position == 14) {
                 jumpToActivity(InlineFunctionActivity::class.java)
+            } else if (position == 15) {
+                jumpToActivity(CoroutinesActivity::class.java)
             }
         }
     }
