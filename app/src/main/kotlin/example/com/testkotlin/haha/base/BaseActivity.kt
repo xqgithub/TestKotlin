@@ -1,6 +1,5 @@
 package example.com.testkotlin.haha.base
 
-import android.app.Activity
 import android.content.Context
 import android.content.pm.ActivityInfo
 import android.os.Bundle
@@ -12,11 +11,9 @@ import android.support.v7.app.AppCompatActivity
  */
 abstract class BaseActivity : AppCompatActivity() {
 
-    var mActivity: Activity? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mActivity = BaseActivity@ this
         // 禁止横竖屏切换
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
