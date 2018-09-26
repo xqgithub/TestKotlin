@@ -7,10 +7,8 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.widget.Toast
-import com.safframework.log.L
 import example.com.testkotlin.R
 import example.com.testkotlin.haha.adapter.MainListAdapter
-import example.com.testkotlin.haha.utils.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -36,12 +34,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         initView()
 
-        L.i("屏幕宽度(像素)----->" + getScreenWidth() + ";"
-                + "屏幕高度(像素)----->" + getScreenHeight())
-        L.i("屏幕宽度(dp)----->" + getScreenWidthDP(mActivity) + ";"
-                + "屏幕高度(dp)----->" + getScreenHeightDP(mActivity))
-        L.i("屏幕密度----->" + getScreenDensity(mActivity) + ";"
-                + "屏幕密度densityDpi----->" + getScreendensityDpi(mActivity))
+//        L.i("屏幕宽度(像素)----->" + getScreenWidth() + ";"
+//                + "屏幕高度(像素)----->" + getScreenHeight())
+//        L.i("屏幕宽度(dp)----->" + getScreenWidthDP(mActivity) + ";"
+//                + "屏幕高度(dp)----->" + getScreenHeightDP(mActivity))
+//        L.i("屏幕密度----->" + getScreenDensity(mActivity) + ";"
+//                + "屏幕密度densityDpi----->" + getScreendensityDpi(mActivity))
 
 
     }
@@ -117,6 +115,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             "jump to AttributesFields",
             "jump to ObjectAndCompanionObject",
             "jump to Entrust",
-            "jump to Function"
+            "jump to Function",
+            "jump to InlineFunction"
     )
 }
