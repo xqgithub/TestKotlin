@@ -19,15 +19,16 @@ class BasicGrammarActivity : AppCompatActivity() {
         setContentView(R.layout.activity_basic_grammar)
         L.init(this.javaClass)//加载日志类TAG
 
-        testLocalvariables()
+//        testLocalvariables()
 //        testArray(stringArray1)
 //        Log.i(TAG, testAutomaticCasts("12").toString())
 //        testForCycle(stringArray)
 //        testWhen(1)
 //        testFor(stringArray, 2)
-//        testRanges(4, 12)
+//        testRanges(4, 7)
 //        testContains(stringArray, "UK")
 //        testMap()
+        test_equality()
     }
 
     /**
@@ -137,21 +138,21 @@ class BasicGrammarActivity : AppCompatActivity() {
     fun testRanges(type: Int, i: Int) {
         if (type == 1) {
             if (i in 1..10) {// equivalent of 1 <= i && i <= 10
-                println(i.toString() + ":in the range")
+                L.i(i.toString() + ":in the range")
             } else if (i !in 1..10) {
-                println(i.toString() + ":not in the range")
+                L.i(i.toString() + ":not in the range")
             }
         } else if (type == 2) {
             for (i in 1..10) {//遍历数字
-                println("在1-10范围内的数值：" + "$i")
+                L.i("在1-10范围内的数值：" + "$i")
             }
         } else if (type == 3) {
             for (i in 10 downTo 1) {//遍历数字颠倒顺序
-                println("在1-10范围内的数值：" + "$i")
+                L.i("在1-10范围内的数值：" + "$i")
             }
         } else if (type == 4) {
             for (i in 10 downTo 1 step 2) {//任意进行数量的迭代
-                println("在1-10范围内的数值：" + "$i")
+                L.i("在1-10范围内的数值：" + "$i")
             }
         }
     }
@@ -178,10 +179,32 @@ class BasicGrammarActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * 相等性
+     * 1.三种运算符   ==, ===, equals()
+     * 2.结构相等（用 equals() 检查） 由 ==（以及其否定形式 !=）操作判断
+     * 3.引用相等（两个引用指向同一对象）
+     */
+    fun test_equality() {
+        val s1 = "Doug"
+        // 使用这种方式创建就是为了创建两个地址不同的字符串。
+        val s2 = String(charArrayOf('D', 'o', 'u', 'g'))
+        L.i(s1)//Doug
+        L.i(s2)//Doug
+        // 如果两个字符串的值相同那么hashCode也相等
+        L.i("s1.hashCode() =${s1.hashCode()}")//2136189
+        L.i("s2.hashCode() =${s2.hashCode()}")//2136189
+        // == <==> equals , 比较的都是字符串的值。
+        L.i("s1 == s2 ${s1 == s2}")//true
+        L.i("s1.equals(s2) ${s1.equals(s2)}")//true
+        // === 比较两个对象的引用是否相同。
+        L.i("s1 === s2 ${s1 === s2}")//flase
+    }
 
     /**
      *测试数据
      */
     val stringArray = arrayOf("UK", "Germany", "Italy")
     val stringArray1 = emptyArray<String>()//长度为0的空数组
+
 }
