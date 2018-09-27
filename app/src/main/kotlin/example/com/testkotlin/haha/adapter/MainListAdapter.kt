@@ -21,7 +21,7 @@ class MainListAdapter(val items: List<String>) : RecyclerView.Adapter<MainListAd
 
     var mcontext: Context? = null
 
-    override fun getItemCount(): Int = items.size
+    override fun getItemCount(): Int = itemsdata.size
 
 
     class MyViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
@@ -41,7 +41,7 @@ class MainListAdapter(val items: List<String>) : RecyclerView.Adapter<MainListAd
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.tv_adapter_item.text = items[position]
+        holder.tv_adapter_item.text = itemsdata[position]
         holder.tv_adapter_item.setOnClickListener {
             //            println("$TAG----->" + holder.view.tv_adapter_item.text)
             if (position == 0) {
@@ -76,6 +76,8 @@ class MainListAdapter(val items: List<String>) : RecyclerView.Adapter<MainListAd
                 jumpToActivity(InlineFunctionActivity::class.java)
             } else if (position == 15) {
                 jumpToActivity(CoroutinesActivity::class.java)
+            } else if (position == 16) {
+                jumpToActivity(DeconstructionActivity::class.java)
             }
         }
     }
@@ -89,6 +91,30 @@ class MainListAdapter(val items: List<String>) : RecyclerView.Adapter<MainListAd
         intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
         mcontext?.startActivity(intent)// 获取class是使用::反射
     }
+
+
+    /**
+     *测试数据
+     */
+    public val itemsdata = listOf<String>(
+            "jump to BasicGrammar -> 基本语法",
+            "jump to TestRecyclerview -> Recyclerview测试",
+            "jump to AnkoToXml -> 运动Anko实现UI布局",
+            "jump to Controlflow -> 控制流",
+            "jump to ReturnsAndJumps -> 返回和跳转",
+            "jump to ClassInherit -> 类和继承",
+            "jump to Expand -> 扩展",
+            "jump to DataClass -> 数据类",
+            "jump to Generic -> 泛型",
+            "jump to Iterable -> 集合归纳",
+            "jump to AttributesFields -> 属性和字段",
+            "jump to ObjectAndCompanionObject -> object和companion object关键字",
+            "jump to Entrust -> 委托和委托属性",
+            "jump to Function -> 函数",
+            "jump to InlineFunction -> 内联函数",
+            "jump to Coroutines -> 协程",
+            "jump to Deconstruction -> 解构声明"
+    )
 
 
 }

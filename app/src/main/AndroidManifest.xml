@@ -49,6 +49,8 @@
         </activity>
         <activity android:name=".haha.activity.CoroutinesActivity">
         </activity>
+        <activity android:name=".haha.activity.DeconstructionActivity">
+        </activity>
     </application>
 
 </manifest>

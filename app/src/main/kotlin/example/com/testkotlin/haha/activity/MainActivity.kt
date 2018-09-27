@@ -101,22 +101,23 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     /**
      *测试数据
      */
-    public val items = listOf<String>(
-            "jump to BasicGrammar",
-            "jump to TestRecyclerview",
-            "jump to AnkoToXml",
-            "jump to Controlflow",
-            "jump to ReturnsAndJumps",
-            "jump to ClassInherit",
-            "jump to Expand",
-            "jump to DataClass",
-            "jump to Generic",
-            "jump to Iterable",
-            "jump to AttributesFields",
-            "jump to ObjectAndCompanionObject",
-            "jump to Entrust",
-            "jump to Function",
-            "jump to InlineFunction",
-            "jump to Coroutines"
+    val items = listOf<String>(
+//            "jump to BasicGrammar -> 基本语法",
+//            "jump to TestRecyclerview -> Recyclerview测试",
+//            "jump to AnkoToXml -> 运动Anko实现UI布局",
+//            "jump to Controlflow -> 控制流",
+//            "jump to ReturnsAndJumps -> 返回和跳转",
+//            "jump to ClassInherit -> 类和继承",
+//            "jump to Expand -> 扩展",
+//            "jump to DataClass -> 数据类",
+//            "jump to Generic -> 泛型",
+//            "jump to Iterable -> 集合归纳",
+//            "jump to AttributesFields -> 属性和字段",
+//            "jump to ObjectAndCompanionObject -> object和companion object关键字",
+//            "jump to Entrust -> 委托和委托属性",
+//            "jump to Function -> 函数",
+//            "jump to InlineFunction -> 内联函数",
+//            "jump to Coroutines -> 协程",
+//            "jump to Deconstruction -> 解构声明"
     )
 }
