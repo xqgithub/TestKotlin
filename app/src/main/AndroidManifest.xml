@@ -51,6 +51,8 @@
         </activity>
         <activity android:name=".haha.activity.DeconstructionActivity">
         </activity>
+        <activity android:name=".haha.activity.EmptySafetyActivity">
+        </activity>
     </application>
 
 </manifest>

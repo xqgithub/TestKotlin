@@ -17,13 +17,13 @@ class MyApp : MultiDexApplication() {
 
     override fun onCreate() {
         super.onCreate()
-        context = this
         // Init Stetho
         Stetho.initializeWithDefaults(this)
     }
 
     override fun attachBaseContext(base: Context?) {
         super.attachBaseContext(base)
-        MultiDex.install(context)
+        context = this
+        MultiDex.install(this)
     }
 }

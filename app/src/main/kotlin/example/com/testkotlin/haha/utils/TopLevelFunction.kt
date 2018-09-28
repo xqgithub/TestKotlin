@@ -15,7 +15,7 @@ import example.com.testkotlin.haha.app.MyApp
  * 等屏幕的宽度  px
  */
 fun getScreenWidth(): Int {
-    val windowManager = MyApp.context!!.getSystemService(Context.WINDOW_SERVICE) as WindowManager
+    val windowManager = MyApp.context?.getSystemService(Context.WINDOW_SERVICE) as WindowManager
     val dm = DisplayMetrics()// 创建了一张白纸
     windowManager.defaultDisplay.getMetrics(dm)// 给白纸设置宽高
     return dm.widthPixels
@@ -26,7 +26,7 @@ fun getScreenWidth(): Int {
  * 得到屏幕的高度 px
  */
 fun getScreenHeight(): Int {
-    val windowManager = MyApp.context!!.getSystemService(Context.WINDOW_SERVICE) as WindowManager
+    val windowManager = MyApp.context?.getSystemService(Context.WINDOW_SERVICE) as WindowManager
     val dm = DisplayMetrics()// 创建了一张白纸
     windowManager.defaultDisplay.getMetrics(dm)// 给白纸设置宽高
     return dm.heightPixels

@@ -78,6 +78,8 @@ class MainListAdapter(val items: List<String>) : RecyclerView.Adapter<MainListAd
                 jumpToActivity(CoroutinesActivity::class.java)
             } else if (position == 16) {
                 jumpToActivity(DeconstructionActivity::class.java)
+            } else if (position == 17) {
+                jumpToActivity(EmptySafetyActivity::class.java)
             }
         }
     }
@@ -113,7 +115,8 @@ class MainListAdapter(val items: List<String>) : RecyclerView.Adapter<MainListAd
             "jump to Function -> 函数",
             "jump to InlineFunction -> 内联函数",
             "jump to Coroutines -> 协程",
-            "jump to Deconstruction -> 解构声明"
+            "jump to Deconstruction -> 解构声明",
+            "jump to EmptySafety -> 空安全"
     )
 
 
