@@ -55,6 +55,8 @@
         </activity>
         <activity android:name=".haha.activity.JavaFromKotlinActivity">
         </activity>
+        <activity android:name=".haha.activity.KotlinFromJavaActivity">
+        </activity>
     </application>
 
 </manifest>

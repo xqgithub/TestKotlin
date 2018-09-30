@@ -82,6 +82,8 @@ class MainListAdapter(val items: List<String>) : RecyclerView.Adapter<MainListAd
                 jumpToActivity(EmptySafetyActivity::class.java)
             } else if (position == 18) {
                 jumpToActivity(JavaFromKotlinActivity::class.java)
+            } else if (position == 19) {
+                jumpToActivity(KotlinFromJavaActivity::class.java)
             }
         }
     }
