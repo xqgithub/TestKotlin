@@ -3,6 +3,9 @@
           package="example.com.testkotlin"
           android:installLocation="preferExternal">
 
+    <!-- 访问网络连接，可能产生GPRS流量 -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name="example.com.testkotlin.haha.app.MyApp"
         android:allowBackup="true"
@@ -56,6 +59,8 @@
         <activity android:name=".haha.activity.JavaFromKotlinActivity">
         </activity>
         <activity android:name=".haha.activity.KotlinFromJavaActivity">
+        </activity>
+        <activity android:name=".haha.activity.Retrofit2Rxjava2Activity">
         </activity>
     </application>
 

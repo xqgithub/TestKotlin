@@ -84,6 +84,8 @@ class MainListAdapter(val items: List<String>) : RecyclerView.Adapter<MainListAd
                 jumpToActivity(JavaFromKotlinActivity::class.java)
             } else if (position == 19) {
                 jumpToActivity(KotlinFromJavaActivity::class.java)
+            } else if (position == 20) {
+                jumpToActivity(Retrofit2Rxjava2Activity::class.java)
             }
         }
     }
@@ -121,7 +123,9 @@ class MainListAdapter(val items: List<String>) : RecyclerView.Adapter<MainListAd
             "jump to Coroutines -> 协程",
             "jump to Deconstruction -> 解构声明",
             "jump to EmptySafety -> 空安全",
-            "jump to JavaFromKotlin -> kotlin中调用java代码"
+            "jump to JavaFromKotlin -> kotlin中调用java代码",
+            "jump to KotlinFromJava -> java中调用kotlin代码",
+            "jump to Retrofit2Rxjava2Activity -> 测试Retrofit2Rxjava2框架"
     )
 
 
