@@ -20,8 +20,9 @@ class Retrofit2Rxjava2Activity : BaseActivity() {
         super.onCreate(savedInstanceState)
 
         submit.setOnClickListener {
-            fetchRepo_Observable()
+            //            fetchRepo_Observable()
 //            fetchRepo_Flowable()
+            fetchRepo_Observable3()
         }
     }
 
@@ -97,6 +98,27 @@ class Retrofit2Rxjava2Activity : BaseActivity() {
                         L.e("apiErrorModel.message----->${apiErrorModel.message}")
                     }
 
+                })
+    }
+
+    /**
+     * 改写ApiClient后的调用方法
+     */
+    private fun fetchRepo_Observable3() {
+        ApiClient.instance.getApiService().listRepos_Observable(inputUser.text.toString())   //ApiService中的方法
+                .compose(NetworkScheduler.compose_observable())                      //线程切换处理
+                .bindUntilEvent(this, ActivityEvent.DESTROY)              //生命周期管理
+                .subscribe(object : ApiResponse<List<Repo>>(this) {       //对象表达式约等于Java中的匿名内部类
+                    override fun success(data: List<Repo>) {              //请求成功，此处显示一些返回的数据
+                        userName.text = data[0].owner.login
+                        repoName.text = data[0].name
+                        description.text = data[0].description
+                        url.text = data[0].html_url
+                    }
+
+                    override fun failure(statusCode: Int, apiErrorModel: ApiErrorModel) { //请求失败，此处直接显示Toast
+                        L.e("apiErrorModel.message----->${apiErrorModel.message}")
+                    }
                 })
     }
 
