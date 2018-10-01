@@ -17,4 +17,7 @@ interface ApiService {
 
     @GET("users/{user}/repos")
     fun listrepos_Flowable(@Path("user") user: String): Flowable<List<Repo>> //每个方法的返回值即一个Observable
+
+    @GET("users/{user}/repos")
+    fun listrepos_Observable2(@Path("user") user: String): Observable<ResponseWrapper<List<Repo>>>  //每个方法的返回值即一个Observable
 }

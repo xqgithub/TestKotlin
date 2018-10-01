@@ -20,8 +20,8 @@ class Retrofit2Rxjava2Activity : BaseActivity() {
         super.onCreate(savedInstanceState)
 
         submit.setOnClickListener {
-            //            fetchRepo_Observable()
-            fetchRepo_Flowable()
+            fetchRepo_Observable()
+//            fetchRepo_Flowable()
         }
     }
 
@@ -76,7 +76,33 @@ class Retrofit2Rxjava2Activity : BaseActivity() {
                     }
                 })
     }
+
+    /**
+     *  使用RequestCallback方式
+     */
+    private fun fetchRepo_Observable2() {
+        //链式调用
+        ApiClient.instance.service.listrepos_Observable2(inputUser.text.toString()) //ApiService中的方法
+                .compose(NetworkScheduler.compose_observable())                    // 线程切换处理
+                .bindUntilEvent(this, ActivityEvent.DESTROY)              //生命周期管理
+                .subscribe(object : RequestCallback<List<Repo>>(this) {
+                    override fun success(data: List<Repo>) {
+                        userName.text = data[0].owner.login
+                        repoName.text = data[0].name
+                        description.text = data[0].description
+                        url.text = data[0].html_url
+                    }
+
+                    override fun failure(statusCode: Int, apiErrorModel: ApiErrorModel) {
+                        L.e("apiErrorModel.message----->${apiErrorModel.message}")
+                    }
+
+                })
+    }
+
+
 }
+
 
 
 
