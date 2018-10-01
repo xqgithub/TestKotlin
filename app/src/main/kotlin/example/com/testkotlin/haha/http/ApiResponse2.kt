@@ -3,8 +3,8 @@ package example.com.testkotlin.haha.http
 import android.content.Context
 import com.google.gson.Gson
 import com.safframework.log.L
-import io.reactivex.Observer
-import io.reactivex.disposables.Disposable
+import org.reactivestreams.Subscriber
+import org.reactivestreams.Subscription
 import retrofit2.HttpException
 import java.net.ConnectException
 import java.net.SocketTimeoutException
@@ -12,20 +12,16 @@ import java.net.UnknownHostException
 
 /**
  * Created by beijixiong on 2018/9/30.
- * Observable/Observer 模式(该模式是没有【背压】的)
- * restful API请求响应的处理
- * 1.每个响应继承Observer，其中的泛型以适配返回的不同的数据体
- * 2.定义两个抽象方法success和failure，在使用的时候只需关注成功和失败这两种情况
- * 3.在onSubscribe即开始请求的时候显示Loading，在请求完成或出错时隐藏
- * 4.在onNext即Observer成功接收数据后直接调用success，在调用处可直接使用返回的数据
- * 5.在onError即请求出错时处理，此处包含两种情况：连接服务器成功但服务器返回错误状态码、网络或其它问题
+ * Flowable/Subscriber 模式（该模式是有背压处理的）
+ * 1.背压策略的一个前提是异步环境，也就是说，被观察者和观察者处在不同的线程环境中
+ * 2.背压（Backpressure）并不是一个像flatMap一样可以在程序中直接使用的操作符，他只是一种控制事件流速的策略
  */
-abstract class ApiResponse<T>(private val context: Context) : Observer<T> {
-
+abstract class ApiResponse2<T>(private val context: Context) : Subscriber<T> {
     abstract fun success(data: T)
     abstract fun failure(statusCode: Int, apiErrorModel: ApiErrorModel)
 
-    override fun onSubscribe(d: Disposable) {
+
+    override fun onSubscribe(s: Subscription?) {
         L.i("onSubscribe----->context = $context")
     }
 
@@ -65,4 +61,6 @@ abstract class ApiResponse<T>(private val context: Context) : Observer<T> {
 
     private fun otherError(e: HttpException) =
             Gson().fromJson(e.response().errorBody()?.charStream(), ApiErrorModel::class.java)
+
+
 }

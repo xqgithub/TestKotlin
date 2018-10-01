@@ -3,13 +3,13 @@ package example.com.testkotlin.haha.base
 import android.content.Context
 import android.content.pm.ActivityInfo
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import com.trello.rxlifecycle2.components.support.RxAppCompatActivity
 
 /**
  * Created by beijixiong on 2018/9/19.
  * Activity的基类
  */
-abstract class BaseActivity : AppCompatActivity() {
+abstract class BaseActivity : RxAppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
