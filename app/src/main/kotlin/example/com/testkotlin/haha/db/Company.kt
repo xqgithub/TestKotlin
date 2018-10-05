@@ -97,17 +97,16 @@ class Company : SqliteBaseOperate<CompanyData>() {
         return num
     }
 
-    override fun clearAllData(context: Context, tableName: String): String {
-        var message = ""
+    override fun clearAllData(context: Context, tableName: String) {
         if (attempt {
                     context.database.use {
-                        execSQL("delete from $tableName")
+                        //                        execSQL("delete from $tableName")
+                        val num = delete("$tableName", null, null)
+                        context.showLongToastSafe("清空数据成功")
                     }
-                    message = "执行操作成功"
                 }.isError) {
-            message = "执行操作失败"
+            context.showLongToastSafe("清空数据出错")
         }
-        return message
     }
 
 

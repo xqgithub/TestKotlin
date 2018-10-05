@@ -52,7 +52,7 @@ class SqliteActivity : BaseActivity() {
         }
 
         btn_sqlite_clear.setOnClickListener {
-            showLongToastSafe(company.clearAllData(this, CompanyTable.TABLE_NAME))
+            company.clearAllData(this, CompanyTable.TABLE_NAME)
         }
 
         btn_sqlite_delete.setOnClickListener {

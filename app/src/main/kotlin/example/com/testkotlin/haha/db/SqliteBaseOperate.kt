@@ -46,7 +46,7 @@ abstract class SqliteBaseOperate<T> {
     /**
      * 清空表中的所有数据
      */
-    abstract fun clearAllData(context: Context, tableName: String): String
+    abstract fun clearAllData(context: Context, tableName: String)
 
 
 }
