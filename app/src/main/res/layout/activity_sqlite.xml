@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btn_sqlite_single"
+        android:layout_width="@dimen/deimen_120x"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/deimen_20x"
+        android:text="插入单条数据"
+        android:textSize="@dimen/deimen_14x"/>
+
+    <Button
+        android:id="@+id/btn_sqlite_multiple"
+        android:layout_width="@dimen/deimen_120x"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_sqlite_single"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/deimen_20x"
+        android:text="插入多条数据"
+        android:textSize="@dimen/deimen_14x"/>
+
+    <Button
+        android:id="@+id/btn_sqlite_clear"
+        android:layout_width="@dimen/deimen_120x"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_sqlite_multiple"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/deimen_20x"
+        android:text="清空数据"
+        android:textSize="@dimen/deimen_14x"/>
+
+
+    <Button
+        android:id="@+id/btn_sqlite_delete"
+        android:layout_width="@dimen/deimen_120x"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_sqlite_clear"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/deimen_20x"
+        android:text="删除单个数据"
+        android:textSize="@dimen/deimen_14x"/>
+
+
+    <Button
+        android:id="@+id/btn_sqlite_selectall"
+        android:layout_width="@dimen/deimen_120x"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_sqlite_delete"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/deimen_20x"
+        android:text="查询全部数据"
+        android:textSize="@dimen/deimen_14x"/>
+
+    <Button
+        android:id="@+id/btn_sqlite_selectone"
+        android:layout_width="@dimen/deimen_120x"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_sqlite_selectall"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/deimen_20x"
+        android:text="查询单条数据"
+        android:textSize="@dimen/deimen_14x"/>
+
+    <Button
+        android:id="@+id/btn_sqlite_update"
+        android:layout_width="@dimen/deimen_120x"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_sqlite_selectone"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/deimen_20x"
+        android:text="修改数据"
+        android:textSize="@dimen/deimen_14x"/>
+
+
+</RelativeLayout>

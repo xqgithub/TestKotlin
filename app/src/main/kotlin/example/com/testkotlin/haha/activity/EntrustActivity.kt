@@ -18,7 +18,7 @@ import example.com.testkotlin.haha.utils.SPreferenceUtils
 class EntrustActivity : BaseActivity() {
 
 
-    var test_sp: String by SPreferenceUtils(MyApp.context!!, "xiaoqueque", "haha", "路飞")
+    var test_sp: String by SPreferenceUtils(MyApp.context!!, "xiaoqueque", "Company", "路飞")//默认存的值是路飞
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,6 +26,7 @@ class EntrustActivity : BaseActivity() {
         val entrustbaseimpl = EntrustBaseImpl("小雀雀")
 //        val entrustbasederived = EntrustBaseDerived(entrustbaseimpl)
 //        entrustbasederived.a()
+
 //        entrustbaseimpl.b()
 //        entrustbaseimpl.c()
 //        entrustbaseimpl.d()
@@ -36,7 +37,7 @@ class EntrustActivity : BaseActivity() {
 //        map["age"] = 77
 //        entrustbaseimpl.e(map)
 
-
+        test_sp = "索隆"//这里改变了
         L.i("----->$test_sp")
     }
 

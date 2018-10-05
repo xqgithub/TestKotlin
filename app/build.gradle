@@ -7,12 +7,13 @@ buildscript {
 //    ext.kotlin_version = "1.2.0"
 //    ext.kotlin_version = "1.0.4"
 //    ext.kotlin_version = "1.0.0-rc-1036"
-
+    ext.anko_version = "0.10.0"
     repositories {
         jcenter()
     }
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
     }
 }
 
@@ -53,12 +54,10 @@ dependencies {
     compile 'com.android.support:appcompat-v7:26.1.0'
     compile 'com.android.support:recyclerview-v7:26.1.0'
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    // Anko
-    compile 'org.jetbrains.anko:anko-sdk15:0.8.2'
-    // sdk19, sdk21, sdk23 are also available
-    compile 'org.jetbrains.anko:anko-support-v4:0.8.2'
+
+    compile "org.jetbrains.anko:anko-support-v4:$anko_version"
     // In case you need support-v4 bindings
-    compile 'org.jetbrains.anko:anko-appcompat-v7:0.8.2'
+
     // For appcompat-v7 bindings
     //SAF-Kotlin-log
     compile 'com.safframework.log:saf-log:1.5.1'
@@ -81,6 +80,20 @@ dependencies {
     //RxLifecycle相关
     compile 'com.trello.rxlifecycle2:rxlifecycle-kotlin:2.2.0'
     compile 'com.trello.rxlifecycle2:rxlifecycle-components:2.2.0'
+    /**
+     * anko库
+     */
+    //anko-layout库，牛逼的dsl(领域特定语言)功能，布局的另一种代码方式，相对比较简洁，xml的简易替代
+    compile "org.jetbrains.anko:anko-sdk25:$anko_version"// sdk19, sdk21, sdk23 are also available
+    compile "org.jetbrains.anko:anko-appcompat-v7:$anko_version"
+    compile "org.jetbrains.anko:anko-sdk25-coroutines:$anko_version"// 主要为兼容一些控件事件的协程，不过协程coroutines目前还不是kotlin的正式内容
+    compile "org.jetbrains.anko:anko-appcompat-v7-coroutines:$anko_version"
+    //anko-commons库，一些通用功能
+    compile "org.jetbrains.anko:anko-commons:$anko_version"
+    //anko-coroutines库
+    compile "org.jetbrains.anko:anko-coroutines:$anko_version"
+    //anko-sqlite库 见名知义，简化sqlite使用的库
+    compile "org.jetbrains.anko:anko-sqlite:$anko_version"
 }
 
 kotlin {             //开始协程实验性功能

@@ -3,8 +3,8 @@ package example.com.testkotlin.haha.utils
 import com.safframework.log.L
 
 /**
-* Created by beijixiong on 2018/9/21.
-*/
+ * Created by beijixiong on 2018/9/21.
+ */
 
 
 /**

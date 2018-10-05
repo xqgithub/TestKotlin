@@ -18,8 +18,8 @@ class AnkoToXml : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         var ui = AnkoToXmlUi()
         ui.setContentView(this)
-        val tv_anko = findViewById(R.id.tv_anko) as TextView
-        tv_anko.text = "haha"
+        val tv_anko = findViewById<TextView>(R.id.tv_anko)
+        tv_anko.text = "Company"
     }
 
 

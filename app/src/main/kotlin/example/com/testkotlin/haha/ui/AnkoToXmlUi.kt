@@ -20,7 +20,7 @@ class AnkoToXmlUi : AnkoComponent<AnkoToXml> {
                     }
 
             button("Tap to Like") {
-                onClick { toast("Thanks for the love!") }
+//                onClick { toast("Thanks for the love!") }
             }
 
             textView {
