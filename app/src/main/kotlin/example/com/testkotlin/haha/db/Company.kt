@@ -11,7 +11,7 @@ import org.jetbrains.anko.db.select
 
 /**
  * Created by beijixiong on 2018/10/4.
- * 公司数据操作类
+ *
  */
 class Company : SqliteBaseOperate<CompanyData>() {
 
