@@ -23,6 +23,7 @@ class SqliteActivity : BaseActivity() {
             val companyData = CompanyData()
             companyData.name = "路飞"
             companyData.address = "武汉"
+            companyData.code = 71
             if (company.insertSingleData(this, CompanyTable.TABLE_NAME, companyData) != -1L) {
                 showLongToastSafe("插入单条数据成功")
             } else {
@@ -34,12 +35,15 @@ class SqliteActivity : BaseActivity() {
             val companyData = CompanyData()
             companyData.name = "路飞"
             companyData.address = "武汉"
+            companyData.code = 71
             val companyData1 = CompanyData()
             companyData1.name = "娜美"
             companyData1.address = "上海"
+            companyData1.code = 72
             val companyData2 = CompanyData()
             companyData2.name = "索隆"
             companyData2.address = "北京"
+            companyData2.code = 73
             val list = mutableListOf<CompanyData>()
             list.add(companyData)
             list.add(companyData1)
@@ -67,7 +71,8 @@ class SqliteActivity : BaseActivity() {
             val list = company.selectAllData(this, CompanyTable.TABLE_NAME)
             if (list.isNotEmpty()) {
                 for (args in list) {
-                    L.i("${args.name}")
+                    val code = args.code
+                    L.i("${code - 70}")
                 }
             }
         }

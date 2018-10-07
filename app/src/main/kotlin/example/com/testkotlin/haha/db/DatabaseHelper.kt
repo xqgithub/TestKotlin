@@ -30,7 +30,9 @@ class DatabaseHelper(ctx: Context) : ManagedSQLiteOpenHelper(ctx, DB_NAME, null,
         database.createTable(CompanyTable.TABLE_NAME, true,
                 CompanyTable.ID to INTEGER + PRIMARY_KEY + UNIQUE,
                 CompanyTable.NAME to TEXT,
-                CompanyTable.ADDRESS to TEXT)
+                CompanyTable.ADDRESS to TEXT,
+                CompanyTable.CODE to INTEGER
+        )
     }
 
     /**

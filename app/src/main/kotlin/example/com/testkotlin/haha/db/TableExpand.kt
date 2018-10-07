@@ -14,5 +14,6 @@ object CompanyTable {
     val ID = "_id"
     val NAME = "name"
     val ADDRESS = "address"
+    val CODE = "code"
 }
 
