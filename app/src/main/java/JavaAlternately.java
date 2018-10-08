@@ -1,8 +1,9 @@
+import com.safframework.log.L;
+
 import java.io.IOException;
 
 import example.com.testkotlin.haha.activity.DataClassActivity;
 import example.com.testkotlin.haha.activity.KotlinFromJavaActivity;
-import utils.LogUtils;
 
 /**
  * Created by beijixiong on 2018/9/28.
@@ -20,13 +21,13 @@ public class JavaAlternately {
 
     public void removeIndices(int[] indices) {
         if (indices != null) {
-            LogUtils.i("indices----->" + indices.length);
+            L.i("indices----->" + indices.length);
         }
     }
 
     public void removeIndices2(int... indices) {
         if (indices != null) {
-            LogUtils.i("indices----->" + indices.length);
+            L.i("indices----->" + indices.length);
         }
     }
 

@@ -69,12 +69,15 @@ class SqliteActivity : BaseActivity() {
 
         btn_sqlite_selectall.setOnClickListener {
             val list = company.selectAllData(this, CompanyTable.TABLE_NAME)
+            val contacts: MutableList<CompanyData> = ArrayList(list)//List数据移植到MutableList中
+            contacts.removeAt(0)
             if (list.isNotEmpty()) {
                 for (args in list) {
                     val code = args.code
-                    L.i("${code - 70}")
+                    L.i("$code")
                 }
             }
+            L.i("$contacts")
         }
 
         btn_sqlite_selectone.setOnClickListener {

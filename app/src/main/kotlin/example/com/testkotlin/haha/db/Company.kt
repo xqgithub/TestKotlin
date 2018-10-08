@@ -47,7 +47,7 @@ class Company : SqliteBaseOperate<CompanyData>() {
     }
 
     override fun selectAllData(context: Context, tableName: String): List<CompanyData> {
-        var list: List<CompanyData> = arrayListOf()
+        var list: List<CompanyData> = listOf()
         if (attempt {
                     context.database.use {
                         list = select(tableName).parseList { CompanyData(HashMap(it)) }
