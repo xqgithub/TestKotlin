@@ -4,9 +4,7 @@ import android.os.Bundle
 import com.safframework.log.L
 import example.com.testkotlin.R
 import example.com.testkotlin.haha.base.BaseActivity
-import example.com.testkotlin.haha.db.Company
-import example.com.testkotlin.haha.db.CompanyData
-import example.com.testkotlin.haha.db.CompanyTable
+import example.com.testkotlin.haha.db.*
 import example.com.testkotlin.haha.utils.showLongToastSafe
 import kotlinx.android.synthetic.main.activity_sqlite.*
 
@@ -20,15 +18,27 @@ class SqliteActivity : BaseActivity() {
         val company = Company()
 
         btn_sqlite_single.setOnClickListener {
-            val companyData = CompanyData()
-            companyData.name = "路飞"
-            companyData.address = "武汉"
-            companyData.code = 71
-            if (company.insertSingleData(this, CompanyTable.TABLE_NAME, companyData) != -1L) {
-                showLongToastSafe("插入单条数据成功")
-            } else {
-                showLongToastSafe("插入单条数据失败")
-            }
+            //            val companyData = CompanyData()
+//            companyData.name = "路飞"
+//            companyData.address = "武汉"
+//            companyData.code = 71
+//            if (company.insertSingleData(this, CompanyTable.TABLE_NAME, companyData) != -1L) {
+//                showLongToastSafe("插入单条数据成功")
+//            } else {
+//                showLongToastSafe("插入单条数据失败")
+//            }
+            val response = UserhttpheadResponse()
+            response.uid = 1
+            response.unm = "haha"
+            response.uip = "xixi"
+            response.locbean = UserhttpheadResponse.LocBean()
+            response.locbean?.type = "ok"
+            var doublelist = mutableListOf<Double>()
+            doublelist.add(0.01)
+            doublelist.add(0.02)
+            response.locbean?.coordinates = doublelist
+            val operate = UserhttpheadOperate()
+            operate.insertSingleData(this, UserhttpheadTable.TABLE_NAME, response)
         }
         btn_sqlite_multiple.setOnClickListener {
 
@@ -68,18 +78,24 @@ class SqliteActivity : BaseActivity() {
         }
 
         btn_sqlite_selectall.setOnClickListener {
-            val list = company.selectAllData(this, CompanyTable.TABLE_NAME)
-            val contacts: MutableList<CompanyData> = ArrayList(list)//List数据移植到MutableList中
-            contacts.removeAt(0)
-            if (list.isNotEmpty()) {
-                for (args in list) {
-                    val code = args.code
-                    L.i("$code")
+            //            val list = company.selectAllData(this, CompanyTable.TABLE_NAME)
+//            val contacts: MutableList<CompanyData> = ArrayList(list)//List数据移植到MutableList中
+//            contacts.removeAt(0)
+//            if (list.isNotEmpty()) {
+//                for (args in list) {
+//                    val code = args.code
+//                    L.i("$code")
+//                }
+//            }
+//            L.i("$contacts")
+            val operate = UserhttpheadOperate()
+            val mutablelist = operate.selectAllData(this, UserhttpheadTable.TABLE_NAME)
+            if (mutablelist.isNotEmpty()) {
+                for (args in mutablelist) {
+                    L.i("uid=${args.uid}")
                 }
             }
-            L.i("$contacts")
         }
-
         btn_sqlite_selectone.setOnClickListener {
             val companytemp = company.selectOneRowData(this, CompanyTable.TABLE_NAME, CompanyTable.NAME, "索隆")
             L.i("${companytemp?.name}")

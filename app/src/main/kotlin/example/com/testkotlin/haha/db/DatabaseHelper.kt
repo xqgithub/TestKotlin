@@ -33,6 +33,17 @@ class DatabaseHelper(ctx: Context) : ManagedSQLiteOpenHelper(ctx, DB_NAME, null,
                 CompanyTable.ADDRESS to TEXT,
                 CompanyTable.CODE to INTEGER
         )
+
+        database.createTable(UserhttpheadTable.TABLE_NAME, true,
+                UserhttpheadTable.ID to INTEGER + PRIMARY_KEY + UNIQUE,
+                UserhttpheadTable.UID to INTEGER,
+                UserhttpheadTable.UNM to TEXT,
+                UserhttpheadTable.UIP to TEXT,
+                UserhttpheadTable.TYPE to TEXT,
+                UserhttpheadTable.X to TEXT,
+                UserhttpheadTable.Y to TEXT
+        )
+
     }
 
     /**

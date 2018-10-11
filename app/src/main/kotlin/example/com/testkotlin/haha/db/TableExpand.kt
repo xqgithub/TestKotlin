@@ -10,10 +10,22 @@ package example.com.testkotlin.haha.db
  * 公司表
  */
 object CompanyTable {
-    val TABLE_NAME = "Company"
+    val TABLE_NAME = "company"
     val ID = "_id"
     val NAME = "name"
     val ADDRESS = "address"
     val CODE = "code"
+}
+
+
+object UserhttpheadTable {
+    val TABLE_NAME = "userhttphead"
+    val ID = "_id"
+    val UID = "uid"
+    val UNM = "unm"
+    val UIP = "uip"
+    val TYPE = "type"
+    val X = "x"
+    val Y = "y"
 }
 
