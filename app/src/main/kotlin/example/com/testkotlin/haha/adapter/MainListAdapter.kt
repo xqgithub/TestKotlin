@@ -88,6 +88,10 @@ class MainListAdapter(val items: List<String>) : RecyclerView.Adapter<MainListAd
                 jumpToActivity(Retrofit2Rxjava2Activity::class.java)
             } else if (position == 21) {
                 jumpToActivity(SqliteActivity::class.java)
+            } else if (position == 22) {
+                jumpToActivity(AnkoToCommons::class.java)
+            } else if (position == 23) {
+                jumpToActivity(AnkoToLayout::class.java)
             }
         }
     }
@@ -106,7 +110,7 @@ class MainListAdapter(val items: List<String>) : RecyclerView.Adapter<MainListAd
     /**
      *测试数据
      */
-    public val itemsdata = listOf<String>(
+    public val itemsdata = listOf(
             "jump to BasicGrammar -> 基本语法",
             "jump to TestRecyclerview -> Recyclerview测试",
             "jump to AnkoToXml -> 运动Anko实现UI布局",
@@ -128,7 +132,9 @@ class MainListAdapter(val items: List<String>) : RecyclerView.Adapter<MainListAd
             "jump to JavaFromKotlin -> kotlin中调用java代码",
             "jump to KotlinFromJava -> java中调用kotlin代码",
             "jump to Retrofit2Rxjava2Activity -> 测试Retrofit2Rxjava2框架",
-            "jump to SqliteActivity -> Sqlite测试"
+            "jump to SqliteActivity -> Sqlite测试",
+            "jump to AnkoToCommons -> Anko commons库介绍",
+            "jump to AnkoToLayout -> Anko layout库介绍"
     )
 
 

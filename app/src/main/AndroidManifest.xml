@@ -64,6 +64,10 @@
         </activity>
         <activity android:name=".haha.activity.SqliteActivity">
         </activity>
+        <activity android:name=".haha.activity.AnkoToCommons">
+        </activity>
+        <activity android:name=".haha.activity.AnkoToLayout">
+        </activity>
     </application>
 
 </manifest>

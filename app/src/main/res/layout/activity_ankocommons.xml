@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/deimen_15x"
+        android:text="activity跳转并且传值"
+        android:textSize="@dimen/deimen_12x"/>
+
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/deimen_15x"
+        android:text="browse"
+        android:textAllCaps="false"
+        android:textSize="@dimen/deimen_12x"/>
+
+    <Button
+        android:id="@+id/btn3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/deimen_15x"
+        android:text="Dimensions类"
+        android:textAllCaps="false"
+        android:textSize="@dimen/deimen_12x"/>
+
+
+    <Button
+        android:id="@+id/btn4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/deimen_15x"
+        android:text="Help类"
+        android:textAllCaps="false"
+        android:textSize="@dimen/deimen_12x"/>
+
+
+</RelativeLayout>
