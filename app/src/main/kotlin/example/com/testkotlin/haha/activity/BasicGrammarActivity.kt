@@ -18,17 +18,19 @@ class BasicGrammarActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_basic_grammar)
         L.init(this.javaClass)//加载日志类TAG
-
 //        testLocalvariables()
 //        testArray(stringArray1)
-//        Log.i(TAG, testAutomaticCasts("12").toString())
+//        L.i("${testAutomaticCasts("12345")}")
 //        testForCycle(stringArray)
+//        testWhile(stringArray)
 //        testWhen(1)
 //        testFor(stringArray, 2)
-//        testRanges(4, 7)
+        testRanges(3, 11)
 //        testContains(stringArray, "UK")
 //        testMap()
-        test_equality()
+//        test_equality()
+//        L.i("0 和 1 之间大的数字是：${testConditionalJudgment(0, 1)}")
+//        L.i("parseInt的值：${parseInt("1")}")
     }
 
     /**
@@ -56,7 +58,7 @@ class BasicGrammarActivity : AppCompatActivity() {
         //变量
         var x = 5 // `Int` 类型自动推断（ 5 默认是 `Int` ）
         x += 1
-        Log.i(TAG, x.toString())
+        L.i(x.toString())
     }
 
     /**
@@ -74,6 +76,7 @@ class BasicGrammarActivity : AppCompatActivity() {
     /**
      *条件判断
      */
+    //1.if的一般写法
     fun testConditionalJudgment(a: Int, b: Int): Int {
         if (a > b) {
             return a
@@ -82,11 +85,26 @@ class BasicGrammarActivity : AppCompatActivity() {
         }
     }
 
+    //2.if作为表达式
+    fun testConditionalJudgment2(a: Int, b: Int) = if (a > b) a else b
+
+
     /**
-     *运算符用于类型判断
+     * 空值与 null 检测
+     * 当某个变量的值可以为 null 的时候，必须在声明处的类型后添加 ? 来标识该引用可为空。
+     */
+    fun parseInt(str: String): Int? {
+        return str.toIntOrNull()
+    }
+
+
+    /**
+     * 运算符用于类型判断
+     * is 运算符检测一个表达式是否某类型的一个实例
      */
     fun testAutomaticCasts(obj: Any): Int? {
-        if (obj is String) {
+        //`obj` 在 `&&` 右边自动转换成 `String` 类型
+        if (obj is String && obj.length > 0) {
             // `obj` 在该条件判断分支内自动转换成 `String`
             return obj.length
         }
@@ -99,20 +117,7 @@ class BasicGrammarActivity : AppCompatActivity() {
      */
     fun testForCycle(args: Array<String>) {
         for (i in args.indices) {
-            Log.i(TAG, "args----->" + args[i])
-        }
-    }
-
-    /**
-     *when表达式
-     */
-    fun testWhen(obj: Any) {
-        when (obj) {
-            1 -> println("One")
-            "Hello" -> println("Greeting")
-            is Long -> println("Long")
-            !is String -> println("Not a string")
-            else -> println("Unknown")
+            L.i("args 在 $i 是 ${args[i]}")
         }
     }
 
@@ -131,6 +136,34 @@ class BasicGrammarActivity : AppCompatActivity() {
         }
 
     }
+
+
+    /**
+     * while 循环
+     */
+    fun testWhile(args: Array<String>) {
+        var index = 0
+        while (index < args.size) {
+            L.i("args 在 $index 是 ${args[index]}")
+            index++
+        }
+
+    }
+
+
+    /**
+     *when表达式
+     */
+    fun testWhen(obj: Any) {
+        when (obj) {
+            1 -> println("One")
+            "Hello" -> println("Greeting")
+            is Long -> println("Long")
+            !is String -> println("Not a string")
+            else -> println("Unknown")
+        }
+    }
+
 
     /**
      *使用区间（ranges）
@@ -159,6 +192,7 @@ class BasicGrammarActivity : AppCompatActivity() {
 
     /**
      * 集合contains的用法
+     * 使用 in 运算符来判断集合内是否包含某实例
      */
     fun testContains(args: Array<String>, arg: String) {
         if (arg in args) {

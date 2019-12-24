@@ -4,8 +4,7 @@ import android.os.Bundle
 import com.safframework.log.L
 import example.com.testkotlin.R
 import example.com.testkotlin.haha.base.BaseActivity
-import kotlinx.coroutines.experimental.*
-import kotlin.coroutines.experimental.buildSequence
+import kotlinx.coroutines.*
 
 /**
  * Created by beijixiong on 2018/9/26.
@@ -106,7 +105,7 @@ class CoroutinesActivity : BaseActivity() {
      * buildIterator():buildIterator() 的工作方式类似于 buildSequence()，但返回一个惰性迭代器
      */
     fun test_buildSequence() {
-        val lazySeq = buildSequence {
+        val lazySeq = sequence {
             L.i("START ")
             for (i in 1..5) {
                 yield(i)
