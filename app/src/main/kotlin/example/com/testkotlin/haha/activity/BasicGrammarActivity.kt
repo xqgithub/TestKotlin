@@ -25,12 +25,15 @@ class BasicGrammarActivity : AppCompatActivity() {
 //        testWhile(stringArray)
 //        testWhen(1)
 //        testFor(stringArray, 2)
-        testRanges(3, 11)
+//        testRanges(3, 11)
 //        testContains(stringArray, "UK")
 //        testMap()
 //        test_equality()
 //        L.i("0 和 1 之间大的数字是：${testConditionalJudgment(0, 1)}")
 //        L.i("parseInt的值：${parseInt("1")}")
+//        testConditionalJudgment3("123456")
+//        testConditionalJudgment4("1")
+//        myTurtle(7, 5)
     }
 
     /**
@@ -87,6 +90,16 @@ class BasicGrammarActivity : AppCompatActivity() {
 
     //2.if作为表达式
     fun testConditionalJudgment2(a: Int, b: Int) = if (a > b) a else b
+
+    //3.if not null 缩写
+    fun testConditionalJudgment3(obj: Any) {
+        L.i("obj 不为空字符串 长度为  ${obj?.toString().length}")
+    }
+
+    //4.if null 执行一个语句
+    fun testConditionalJudgment4(a: String? = null) {
+        L.i("${a ?: "a 为 null"}")
+    }
 
 
     /**
@@ -202,8 +215,9 @@ class BasicGrammarActivity : AppCompatActivity() {
         }
     }
 
+
+    /************** 习惯用法 start **************/
     /**
-     * 习惯用法
      * 遍历 map/list 中的键值对
      */
     fun test() {
@@ -234,6 +248,33 @@ class BasicGrammarActivity : AppCompatActivity() {
         // === 比较两个对象的引用是否相同。
         L.i("s1 === s2 ${s1 === s2}")//flase
     }
+
+
+    /**
+     * 一个对象实例调用多个方法 （with）
+     */
+    class Turtle {
+        //1.加法
+        fun sum(a: Int, b: Int) {
+            L.i("a 和 b 之和：${a + b} ")
+        }
+
+        //2.减法
+        fun subtraction(a: Int, b: Int) {
+            L.i("a 和 b 之差：${a - b} ")
+        }
+    }
+
+    fun myTurtle(a: Int = 0, b: Int = 0) {
+        val myturtle = Turtle()
+        with(myturtle) {
+            if (a > b) subtraction(a, b) else sum(a, b)
+        }
+    }
+
+
+    /************** 习惯用法 end **************/
+
 
     /**
      *测试数据
