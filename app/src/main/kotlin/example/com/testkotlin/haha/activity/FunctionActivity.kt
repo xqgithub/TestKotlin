@@ -50,11 +50,11 @@ class FunctionActivity : BaseActivity() {
 //        test_Run2()
 //        test_Run3()
 //        test_with()
-//        test_apply()
+        test_apply()
 //        test_let()
 //        test_takeif()
 //        test_takeUnless()
-        test_repeat()
+//        test_repeat()
 
 
 //        val result5 = test_closure1(4)()
