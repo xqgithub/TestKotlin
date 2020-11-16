@@ -1,6 +1,7 @@
 package example.com.testkotlin.haha.domain
 
-import com.safframework.log.L
+import android.icu.lang.UCharacter.GraphemeClusterBreak.L
+import com.safframework.log.i
 
 /**
  * Created by XQ on 2017/9/15.

@@ -1,7 +1,8 @@
 package example.com.testkotlin.haha.activity
 
+import android.icu.lang.UCharacter.GraphemeClusterBreak.L
 import android.os.Bundle
-import com.safframework.log.L
+import com.safframework.log.i
 import example.com.testkotlin.R
 import example.com.testkotlin.haha.app.MyApp
 import example.com.testkotlin.haha.base.BaseActivity

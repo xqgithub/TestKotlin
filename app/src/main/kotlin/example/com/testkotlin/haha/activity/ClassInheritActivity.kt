@@ -1,8 +1,9 @@
 package example.com.testkotlin.haha.activity
 
+import android.icu.lang.UCharacter.GraphemeClusterBreak.L
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.safframework.log.L
+import com.safframework.log.i
 import example.com.testkotlin.haha.domain.Inherited
 import example.com.testkotlin.haha.domain.Person
 
